@@ -1,0 +1,391 @@
+/*
+Ярлыки работ (статус, жанр, рейтинг, дата)
+Используется на страницах: 
+1. Поиск (фильтр) 
+*/
+
+
+
+/* Checkboxes 
+----------------------------------*/
+
+.tag {
+    width: 143px;
+    border-radius: 25px;
+    padding: 8px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    background-color: #fff;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: color .5s linear;
+    transition: background .5s linear;
+    transition: border .3s linear;
+}
+
+.check {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+/* Завершен! */
+.completed {
+    color: #1AC23F;
+    border: 1px solid #1AC23F;
+}
+
+#completed+label .tag {
+    position: relative;
+    z-index: -1;
+}
+
+#completed:checked+label button {
+    font-weight: 700;
+}
+
+#completed:checked+label .completed {
+    color: #5F9656;
+    background-color: #ABF2BA;
+    border-color: #ABF2BA;
+}
+
+
+/* В процессе */
+.in_progress {
+    color: #FFA41C;
+    border: 1px solid #FFA41C;
+}
+
+#in_progress+label .tag {
+    position: relative;
+    z-index: -1;
+}
+
+#in_progress:checked+label button {
+    font-weight: 700;
+}
+
+#in_progress:checked+label .in_progress {
+    color: #FFA41C;
+    background-color: #FFDFAE;
+    border-color: #FFDFAE;
+}
+
+/* Боевик */
+.Боевик {
+    color: #179B5C;
+    border: 1px solid #179B5C;
+}
+
+#Боевик+label .tag {
+    position: relative;
+    z-index: -1;
+}
+
+#Боевик:checked+label button {
+    font-weight: 700;
+}
+
+#Боевик:checked+label .Боевик {
+    color: #179B5C;
+    background-color: #B6E9D0;
+    border-color: #B6E9D0;
+}
+
+
+/* Детектив */
+.Детектив {
+    color: #7A7A7A;
+    border: 1px solid #7A7A7A;
+}
+
+#Детектив+label .tag {
+    position: relative;
+    z-index: -1;
+}
+
+#Детектив:checked+label button {
+    font-weight: 700;
+}
+
+#Детектив:checked+label .Детектив {
+    color: #7A7A7A;
+    background-color: #F2F2F2;
+    border-color: #F2F2F2;
+}
+
+/* Драма */
+.Драма {
+    background: #BDF7FF;
+border-radius: 20px;
+    color: #00BCD6;
+    font-size: 14px;
+    line-height: 17px;
+    
+    /* identical to box height */
+    
+    color: #00BCD6;
+    
+    
+}
+
+#Драма+label .tag {
+    position: relative;
+    z-index: -1;
+}
+
+#Драма:checked+label button {
+    font-weight: 700;
+}
+
+#Драма:checked+label .Драма {
+    color: #00BCD6;
+    background-color: #BDF7FF;
+    border-color: #BDF7FF;
+}
+
+/* Приключения */
+.Приключения {
+    color: #0029FF;
+    border: 1px solid #0029FF;
+}
+
+#Приключения+label .tag {
+    position: relative;
+    z-index: -1;
+}
+
+#Приключения:checked+label button {
+    font-weight: 700;
+}
+
+#Приключения:checked+label .Приключения {
+    color: #0029FF;
+    background-color: #9AC3F2;
+    border-color: #9AC3F2;
+}
+
+
+/* Романтика */
+.Романтика {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #FF7070;
+    background: #FFD0DE;
+}
+
+#Романтика+label .tag {
+    position: relative;
+    z-index: -1;
+}
+
+#Романтика:checked+label button {
+    font-weight: 700;
+}
+
+#Романтика:checked+label .Романтика {
+    color: #FF7070;
+    background-color: #FFD0DE;
+    border-color: #FFD0DE;
+}
+
+/* Ужасы */
+.Ужасы {
+
+    background: #FF2C2C;
+    border-radius: 20px;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #FFF5F5;
+   
+}
+
+#Ужасы+label .tag {
+    position: relative;
+    z-index: -1;
+}
+
+.Ужасы:checked+label button {
+    font-weight: 700;
+}
+
+#Ужасы:checked+label .Ужасы {
+    color: #fff;
+    background-color: #FF2C2C;
+ 
+}
+
+/* Фэнтэзи */
+.Фэнтези {
+    line-height: 17px;
+color: #521392;
+
+
+background: #CD9BFF;
+border-radius: 20px;
+    color: #521392;
+
+}
+
+#Фэнтези+label .tag {
+    position: relative;
+    z-index: -1;
+}
+
+#Фэнтези:checked+label button {
+    font-weight: 700;
+}
+
+#Фэнтези:checked+label .Фэнтези {
+    color: #521392;
+    background-color: #CD9BFF;
+    border-color: #CD9BFF;
+}
+
+/* Юмор */
+.humor {
+    color: #DFD261;
+    border: 1px solid #DFD261;
+}
+
+#humor+label .tag {
+    position: relative;
+    z-index: -1;
+}
+
+#humor:checked+label button {
+    font-weight: 700;
+}
+
+#humor:checked+label .humor {
+    color: #FF9900;
+    background-color: #FFF387;
+    border-color: #FFF387;
+}
+
+
+
+/* Рейтинг */
+.popular {
+    width: 270px;
+    color: #818181;
+    border: 1px solid #818181;
+}
+
+#popular_more+label .tag {
+    position: relative;
+    z-index: -1;
+}
+
+#popular_more:checked+label button {
+    font-weight: 700;
+}
+
+#popular_more:checked+label .popular {
+    color: #fff;
+    background-color: #BEBEBE;
+    border-color: #BEBEBE;
+}
+
+#popular_less+label .tag {
+    position: relative;
+    z-index: -1;
+}
+
+#popular_less:checked+label button {
+    font-weight: 700;
+}
+
+#popular_less:checked+label .popular {
+    color: #fff;
+    background-color: #BEBEBE;
+    border-color: #BEBEBE;
+}
+
+/* Дата */
+
+.date {
+    width: 188px;
+    border: 1px solid #C4C4C4;
+    border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #C4C4C4;
+    text-align: center;
+    padding: 8px 0;
+
+}
+
+
+/* Ярлыки (некликабельные)
+----------------------------------*/
+
+.work_genre {
+    display: block;
+    width: 157px;
+    padding: 9px 0;
+    border: 1px solid;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.work_Боевик {
+    color: #179B5C;
+    background: #B6E9D0;
+    border-color: #B6E9D0;
+}
+
+.work_Детектив {
+    color: #7A7A7A;
+    background: #F2F2F2;
+    border-color: #F2F2F2;
+}
+
+.work_Драма {
+    color: #00BCD6;
+    background: #BDF7FF;
+    border-color: #BDF7FF;
+}
+
+.work_Приключения {
+    color: #0029FF;
+    background: #9AC3F2;
+    border-color: #9AC3F2;
+}
+
+.work_Романтика {
+    color: #FF7070;
+    background: #FFD0DE;
+    border-color: #FFD0DE;
+}
+
+.work_Ужасы {
+    color: #fff;
+    background: #FF2C2C;
+    border-color: #FF2C2C;
+}
+
+.work_Фэнтези {
+    color: #521392;
+    background: #CD9BFF;
+    border-color: #CD9BFF;
+}
+
+.work_humor {
+    color: #FF9900;
+    background: #FFF387;
+    border-color: #FFF387;
+}
