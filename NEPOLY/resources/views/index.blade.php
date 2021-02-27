@@ -37,7 +37,7 @@ BookOfBooks
                     <div class="history__one index__history_head">
 
                         <div class="index__history_header ">
-                            <h3 class="d-inline ">{{$his_item->title}}</h3>
+                            <h3 class="d-inline "><a href=""> {{$his_item->title}}</a></h3>
                             <div class="img_like d-inline"><img src="{{ asset('img/i2.png') }}" alt="">
                                 <b>234</b></div>
                                 <div class="img_comm d-inline"><img  src="{{ asset('img/i1.png') }}" class=""
@@ -55,29 +55,7 @@ BookOfBooks
                       </div>
                     @endforeach
                   
-                  <div class="history__one index__history_head">
-
-                    <div class="index__history_header">
-                        <h3 class="d-inline ">Украденный свиттер</h3>
-                        <div class="img_like d-inline"><img src="{{ asset('img/i2.png') }}" alt="">
-                        <b>234</b></div>
-                        <div class="img_comm d-inline"><img  src="{{ asset('img/i1.png') }}" class=""
-                            alt="">
-                        <b>123</b></div>
-                        
-                        <span class="float-right align-self-end">Детектив</span>
-                    </div>
-                    <div class="index__history_date">
-                        <span class=" index__history_spanOne">Шерлок Холмс</span> <span class="index__history_spanTwo">11.22.2021</span> <span class="float-right ">Завершена!</span>
-                    </div>
-                    <div class="index__history_p">
-                        <p>Миссис Салли, которая зарабатывала на жизнь, продавая свитеры ручной работы, в холодный
-                            ноябрьский вечер с ужасом обнаружила пропажу нового изделия - заказ самой королевы
-                            Великобритании! Обратившись к полиции, женщина не получила никакой помощи. Неудивительно,
-                            ведь кража произошла в запертой комнате! Справится ли с этой уму непостижимой задачей наш
-                            главный детектив?</p>
-                    </div>
-                  </div>
+              
                 </div>
             </div>
 
@@ -92,7 +70,7 @@ BookOfBooks
                     <p class="text-center">Поддерживай авторов и
                         оставляй комментарии</p></div>
                 <div class="col-md-4 offset-md-4">
-                    <button class='features__button'>Перейти ко всем работам</button> 
+                  <a href="{{ route('show') }}"> <button class='features__button'>Перейти ко всем работам</button> </a> 
                 </div>
                 
             </div>

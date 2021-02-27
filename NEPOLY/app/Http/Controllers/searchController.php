@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\HistoryPar;
 
 use Illuminate\Http\Request;
 
-class HistoryParController extends Controller
+class searchController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class HistoryParController extends Controller
      */
     public function index()
     {
-        return view('works.allWorks', ['history'=>HistoryPar::all()]);
+        return view('works.search');
     }
 
     /**
@@ -41,10 +40,10 @@ class HistoryParController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\HistoryPar  $historyPar
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(HistoryPar $historyPar)
+    public function show($id)
     {
         //
     }
@@ -52,10 +51,10 @@ class HistoryParController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\HistoryPar  $historyPar
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(HistoryPar $historyPar)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +63,10 @@ class HistoryParController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\HistoryPar  $historyPar
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, HistoryPar $historyPar)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +74,10 @@ class HistoryParController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\HistoryPar  $historyPar
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(HistoryPar $historyPar)
+    public function destroy($id)
     {
         //
     }

@@ -12,13 +12,13 @@
                 <a class=" active" aria-current="page" href="{{ route('add') }}">Добавить работу</a>
               </li>
               <li class="nav-item">
-                <a class="" href="#">Все работы</a>
+                <a class="" href="{{ route('show') }}">Все работы</a>
               </li>
               <li class="nav-item">
-                <a class="" href="#">Все авторы</a>
+                <a class="" href="{{ route('author') }}">Все авторы</a>
               </li>
               <li class="nav-item">
-                <a class=" " href="#" tabindex="-1" aria-disabled="true">Поиск</a>
+                <a class=" " href="{{ route('search') }}" tabindex="-1" aria-disabled="true">Поиск</a>
               </li>
               
             </ul>
@@ -36,10 +36,10 @@
                 </form> --}}
                 @else 
                 <li class="nav-item">
-                    <a class= "" href="{{ route('login') }}" tabindex="-1" aria-disabled="true">Вход</a>
+                    <a class="pink" href="{{ route('login') }}" tabindex="-1" aria-disabled="true">Вход</a>
                   </li>
                 <li class="nav-item">
-                    <a class="" href="{{ route('register') }}" tabindex="-1" aria-disabled="true">Регистрация</a>
+                    <a class="pink" href="{{ route('register') }}" tabindex="-1" aria-disabled="true">Регистрация</a>
                   </li>
                 @endif
 
@@ -53,7 +53,9 @@
 </div>
 
 <style>
-    
+ .pink {
+  color: #FF008A;
+ }   
 .no-btn {
     background: none;
     border: none;

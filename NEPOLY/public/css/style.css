@@ -9,24 +9,28 @@ a {
 
     color: #000000;
 }
-
+.pink {
+    color: #FF008A;
+}
 
 /* HEADER  */
 .index-container__header ul li {
     margin-right: 30px;
-    
+
 }
+
 .index-container__header ul li a {
     font-style: normal;
-font-weight: normal;
-font-size: 16px;
-line-height: 20px;
-/* identical to box height */
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
 
 
-color: #000000;
+    color: #000000;
 
 }
+
 /* INDEX H1 */
 
 .index__h1 {
@@ -67,20 +71,23 @@ color: #000000;
     padding-right: 75px;
     border: none;
 }
+
 .index__history_date span {
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 20px;
     /* identical to box height */
-    
-    
+
+
     color: #616161;
 
 }
+
 .index__history_spanTwo {
     margin-left: 80px;
 }
+
 /* INDEX HISTORY */
 .index__history h3 {
     font-style: normal;
@@ -170,25 +177,28 @@ color: #000000;
 .footer {
     margin-top: 188px;
 }
+
 .bg_grey_footer {
     padding-top: 52px;
     padding-bottom: 45px;
     background: #EEEEEE;
 }
+
 .bg_white_footer {
-   padding-top: 40px;
-   padding-bottom: 38px;
-background: #C8C8C8;
-font-style: normal;
-font-weight: normal;
-font-size: 16px;
-line-height: 20px;
-/* identical to box height */
+    padding-top: 40px;
+    padding-bottom: 38px;
+    background: #C8C8C8;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
 
 
-color: #FFFFFF;
+    color: #FFFFFF;
 
 }
+
 @media (max-width: 750px) {
 
     .index__h1 h1,
