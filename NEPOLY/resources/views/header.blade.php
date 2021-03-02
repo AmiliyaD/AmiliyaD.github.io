@@ -24,8 +24,8 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 @if (Auth::check())
-                <li class="nav-item">
-                    <a class="" href="{{ route('dashboard') }}" tabindex="-1" aria-disabled="true">{{Auth::user()->name}}</a>
+                <li class="nav-item authCheck">
+                    <a class=""  style="color: #FF008A;" href="{{ route('dashboard') }}" tabindex="-1" aria-disabled="true">{{Auth::user()->name}}</a>
                   </li>
                   {{-- <form action="{{ route('logout') }}" method="post">
                     @csrf
@@ -35,11 +35,11 @@
 
                 </form> --}}
                 @else 
-                <li class="nav-item">
-                    <a class="pink" href="{{ route('login') }}" tabindex="-1" aria-disabled="true">Вход</a>
+                <li class="nav-item authCheck">
+                    <a class="pink"  style="color: #FF008A;" href="{{ route('login') }}" tabindex="-1" aria-disabled="true">Вход</a>
                   </li>
-                <li class="nav-item">
-                    <a class="pink" href="{{ route('register') }}" tabindex="-1" aria-disabled="true">Регистрация</a>
+                <li class="nav-item authCheck">
+                    <a class="pink" style="color: #FF008A;" href="{{ route('register') }}" tabindex="-1" aria-disabled="true">Регистрация</a>
                   </li>
                 @endif
 

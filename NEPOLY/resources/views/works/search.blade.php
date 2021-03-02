@@ -5,23 +5,23 @@
 Поиск
 @endsection
 
-<div class="container">
+<div class="container ">
     @include('header')
-    <div class=" search-1">
+    <div class=" search-1 search_h">
         <div class="col-md-2 col-12">
             <h1>Поиск</h1>
         </div>
     
     </div>
-    <div class="row">
+    <div class="row search_body">
         <div class="col-md-6">
             <input type="text" class="se-0" placeholder="Введите имя работы...">
         </div>
     
     </div>
-    <div class="row">
+    <div class="row searchButton">
         {{-- buttons --}}
-        <div class="col-md-6 ">
+        <div class="col-md-6 searchButton_button">
             <div class="row">
                 {{-- row-1 --}}
                 <div class="col-lg-4 col-md-6 col-sm-6">
@@ -65,7 +65,9 @@
             <img src="{{ asset('img/lup.png') }}" class="img-fluid" width="600px" alt="">
         </div>
     </div>
-    <div class="row">
+
+    {{-- РЕЗУЛЬТАТЫ ПОИСКА --}}
+    <div class="row searchRes">
     
         <div class="col-md-6">
             <h3>Результаты поиска</h3>

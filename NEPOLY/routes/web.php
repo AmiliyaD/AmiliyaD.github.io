@@ -31,6 +31,11 @@ Route::get('showWorks', [HistoryParController::class, 'index'])->name('show');
 Route::get('allAuthors', [authorController::class, 'index'])->name('author');
 // ПОИСК РАБОТ
 Route::get('search', [searchController::class, 'index'])->name('search');
+
+
+
+// ДОБАВЛЕНИЕ РАБОТЫ
+Route::post('addwork',[HistoryTextController::class, 'store'])->middleware(['auth'])->name('addwork');
 // ПРОФИЛЬ ПОЛЬЗОВАТЕЛЯ
 Route::get('/dashboard', [ProfileController::class,'index'])->middleware(['auth'])->name('dashboard');
 

@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\HistoryText;
 use Illuminate\Http\Request;
-
+use App\Models\Genre;
+use App\Models\HistoryPar;
 class HistoryTextController extends Controller
 {
     /**
@@ -14,12 +15,9 @@ class HistoryTextController extends Controller
      */
     public function index()
     {
-       if (Auth::check()) {
-        return view('addHistory');
-       }
-       else {
-        return "не зареган";
-       }
+      
+        return view('profile.addWorks',['genres'=>Genre::all()]);
+     
     }
 
     /**
@@ -29,7 +27,7 @@ class HistoryTextController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -40,7 +38,20 @@ class HistoryTextController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $request->validate([
+            'title'=>'required',
+            'text'=>'required'
+        ]);
+        $store = new HistoryPar;
+        $store->user_id = $request->user_id;
+        $store->genre_id = $request->genre;
+        $store->title = $request->title;
+        $store->text = $request->text;
+        $store->save();
+
+        $request->session()->flash('info', 'Новая история успешно добавлена!');
+        return redirect()->route('dashboard');
     }
 
     /**

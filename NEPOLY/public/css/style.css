@@ -1,4 +1,10 @@
 body,
+img {
+    border: none;
+}
+button {
+    outline: none;
+}
 a {
     font-style: normal;
     font-weight: normal;
@@ -18,7 +24,9 @@ a {
     margin-right: 30px;
 
 }
-
+.authCheck a {
+    color: #FF008A;
+}
 .index-container__header ul li a {
     font-style: normal;
     font-weight: normal;
@@ -87,7 +95,16 @@ a {
 .index__history_spanTwo {
     margin-left: 80px;
 }
+    
+.history_one__h3 {
+    font-style: normal;
+font-weight: bold;
+font-size: 36px;
+line-height: 44px;
 
+
+color: #000000;
+}
 /* INDEX HISTORY */
 .index__history h3 {
     font-style: normal;
@@ -199,6 +216,15 @@ a {
 
 }
 
+
+
+/* PROFILE  */
+.profile {
+    margin-top: 128px
+}
+.profile_allWork {
+    margin-top: 128px;
+}
 @media (max-width: 750px) {
 
     .index__h1 h1,

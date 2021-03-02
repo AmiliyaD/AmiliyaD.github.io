@@ -44,10 +44,10 @@ BookOfBooks
                                     alt="">
                                 <b>123</b></div>
                                 
-                            <span class="float-right">Детектив</span>
+                            <span class="float-right">{{$his_item->genresId->name}}</span>
                         </div>
                         <div class="index__history_date">
-                            <span class=" index__history_spanOne">Шерлок Холмс</span> <span class="index__history_spanTwo">11.22.2021</span> <span class="float-right ">Завершена!</span>
+                            <span class=" index__history_spanOne">{{$his_item->userId->name}}</span> <span class="index__history_spanTwo">11.22.2021</span> <span class="float-right ">Завершена!</span>
                         </div>
                         <div class="index__history_p">
                             <p>{{$his_item->description}}</p>

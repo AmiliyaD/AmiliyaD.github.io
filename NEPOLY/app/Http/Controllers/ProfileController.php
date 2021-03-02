@@ -17,7 +17,7 @@ class ProfileController extends Controller
     {
         //
         $his = HistoryPar::where('user_id', Auth::user()->id)->get();
-        return view('profile', ['history'=>$his]);
+        return view('profile.home', ['history'=>$his]);
     }
 
     /**
