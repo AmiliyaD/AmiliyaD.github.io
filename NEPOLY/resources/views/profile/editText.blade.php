@@ -1,6 +1,6 @@
 {{-- РЕДАКТИРОВАНИЕ ИСТОРИЙ (РАБОТЫ) --}}
 
-@extends('layouts.app')
+
 <link rel="stylesheet" href="{{ asset('css/par.css') }}">
 @section('content')
 @section('title')

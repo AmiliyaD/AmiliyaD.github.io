@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Comment;
 use App\Models\HistoryPar;
 use Illuminate\Http\Request;
 
@@ -14,7 +16,12 @@ class homeController extends Controller
     public function index()
     {
         //
+        $id= HistoryPar::all()->get('id');
         $his = HistoryPar::all();
+        // $hi2s = HistoryPar::find(3)->comments()->get()->count();
+        
+        
+        // return $hi2s;
         return view('index',['histor'=>$his]);
     }
 

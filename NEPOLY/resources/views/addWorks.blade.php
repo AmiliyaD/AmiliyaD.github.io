@@ -35,7 +35,7 @@
         </form>
     </div>
 </div>
-
+@include('footer')
 @else
     <p>Вы не зарегистрированы</p>
     Зарегистироваться? 
@@ -48,3 +48,7 @@
 
 
 @endsection
+
+<div class="footer">
+    @include('footer')
+</div>

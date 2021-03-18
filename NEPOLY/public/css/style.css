@@ -1,9 +1,23 @@
+* {
+    outline: none;
+}
+button {
+    background: none;
+    border: none
+}
 body,
 img {
     border: none;
 }
 button {
     outline: none;
+}
+ul {
+    padding: 0;
+    margin: 0;
+}
+li {
+    list-style: none;
 }
 a {
     font-style: normal;
@@ -19,6 +33,13 @@ a {
     color: #FF008A;
 }
 
+/* edit_icons */
+.editSum div {
+    margin-top: 15px;
+}
+.editSum_completed:hover, .editSum_edit:hover, .editSum_del:hover {
+    opacity: 50%;
+}
 /* HEADER  */
 .index-container__header ul li {
     margin-right: 30px;
@@ -40,7 +61,12 @@ a {
 }
 
 /* INDEX H1 */
-
+.allIndex {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 66px;  
+}
 .index__h1 {
     margin-top: 200px;
 }
@@ -62,7 +88,16 @@ a {
 
     color: #000000;
 }
+.allButtons {
+    background: #FF008A;
+    border-radius: 50px;
+    font-style: normal;
+    font-weight: bold;
+   
+    line-height: 29px;
 
+    color: #FFFFFF;
+}
 .index__h1_button {
 
     background: #FF008A;

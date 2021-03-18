@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 use App\Models\HistoryText;
 use Illuminate\Http\Request;
@@ -60,20 +62,34 @@ class HistoryTextController extends Controller
      * @param  \App\Models\HistoryText  $historyText
      * @return \Illuminate\Http\Response
      */
-    public function show(HistoryText $historyText)
+    public function show(HistoryText $historyText, $id)
     {
         //
+        return view('profile.showText', ['par'=>HistoryPar::find($id)]);
     }
 
+    public function showWork($id)
+    {
+        return view('works.showWork', ['work'=>HistoryPar::find($id), 'comments'=>Comment::where('post_id', $id)->get()]);
+        # code...
+    }
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\HistoryText  $historyText
      * @return \Illuminate\Http\Response
      */
-    public function edit(HistoryText $historyText)
+    public function edit(HistoryText $historyText,Request $request)
     {
         //
+        $add = new HistoryText;
+        $add->history_title = $request->title;
+        $add->history_text = $request->text;
+        $add->history_id = $request->history_id;
+        $add->save();
+        
+   $request->session()->flash('info', 'Новая глава успешно добавлена!');
+        return redirect()->route('addPar', ['id'=> $request->history_id]);
     }
 
     /**
@@ -83,9 +99,26 @@ class HistoryTextController extends Controller
      * @param  \App\Models\HistoryText  $historyText
      * @return \Illuminate\Http\Response
      */
+    public function openPar( $ed_id)
+    {
+        return view('profile.editPar', ['edit'=>HistoryText::where('history_id', $ed_id)->first()]);
+        # code...
+    }
     public function update(Request $request, HistoryText $historyText)
     {
         //
+        $edPar = HistoryText::find($request->history_id);
+        // $request->validate([
+        //     'title' => 'required',
+        //     'text' => 'required',
+        // ]);
+        $edPar->history_title = $request->title;
+        $edPar->history_text = $request->text;
+   
+        $edPar->save();
+         
+        $request->session()->flash('info', 'Глава успешно обновлена!');
+        return redirect()->route('addPar', ['id'=> $request->his_id]);
     }
 
     /**

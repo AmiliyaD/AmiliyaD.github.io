@@ -1,0 +1,165 @@
+button {
+    background: none;
+    border: none
+}
+
+.showText_Bg {
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+.showText_h3 h3 {
+    margin-top: 124px;
+}
+
+.showBorder {
+    border: 3px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 40px;
+}
+
+.obertka {
+    border: 3px solid #C4C4C4;
+box-sizing: border-box;
+border-radius: 40px;
+}
+
+/* SHOW TEXT BODY */
+.showText__title {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 38px;
+    padding-right: 138px;
+
+}
+
+.showText__text {
+    margin-top: 50px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.showText__pars {
+    margin-top: 60px;
+}
+
+.showText__button button {
+    /* background: #CD9BFF; */
+    border-radius: 40px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    border: none;
+    /* color: #521392; */
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-right: 80px;
+    padding-left: 80px;
+}
+
+.showText__buttons {
+    margin-top: 77px;
+}
+
+.showText__buttons button {
+    width: 90%;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+}
+
+.showText__buttons a {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    font-size: 20px;
+
+}
+
+.par_button {
+    padding-top: 30px;
+    padding-bottom: 20px
+}
+
+/* show text */
+.titleDesc_bg {
+    border: 3px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 40px;
+}
+
+.titleDesc_text {
+    padding-top: 40px;
+    padding-left: 70px;
+    padding-bottom: 40px;
+    padding-right: 70px;
+}
+
+.history_title {
+    margin-top: 100px;
+}
+
+.history_par {
+    margin-top: 50px;
+}
+
+/*show_text - history_comment */
+.history_commentInp {
+    margin-top: 150px;
+}
+
+.comment_input {
+    width: 100%;
+
+    border: 3px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 40px;
+    height: 218px;
+
+}
+
+.commentInt__buttons button {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 27px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 66px;
+    padding-right: 66px;
+    margin-top: 30px;
+}
+
+.buttons_like {
+
+    border: 1px solid #FF897D;
+    box-sizing: border-box;
+    border-radius: 50px;
+
+    color: #FF897D;
+
+}
+
+
+/* comment_text */
+.comments_text {
+    margin-top: 50px;
+}
+.history_comments {
+    margin-top: 100px;
+}
+.comment_text_inn {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+.editPar__title textarea, input {
+    width: 100%;
+}

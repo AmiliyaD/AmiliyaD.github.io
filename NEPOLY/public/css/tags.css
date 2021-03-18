@@ -55,6 +55,15 @@
     border-color: #ABF2BA;
 }
 
+.in_completed_main {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #1AC23F;
+
+}
 
 /* В процессе */
 .in_progress {
@@ -75,6 +84,17 @@
     color: #FFA41C;
     background-color: #FFDFAE;
     border-color: #FFDFAE;
+}
+
+.in_progress_main {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+
+
+    color: #FFA41C;
 }
 
 /* Боевик */
@@ -102,6 +122,7 @@
 /* Детектив */
 .Детектив {
     color: #7A7A7A;
+
     border: 1px solid #7A7A7A;
 }
 
@@ -123,16 +144,16 @@
 /* Драма */
 .Драма {
     background: #BDF7FF;
-border-radius: 20px;
+    border-radius: 20px;
     color: #00BCD6;
     font-size: 14px;
     line-height: 17px;
-    
+
     /* identical to box height */
-    
+
     color: #00BCD6;
-    
-    
+
+
 }
 
 #Драма+label .tag {
@@ -206,7 +227,7 @@ border-radius: 20px;
     line-height: 17px;
 
     color: #FFF5F5;
-   
+
 }
 
 #Ужасы+label .tag {
@@ -221,17 +242,17 @@ border-radius: 20px;
 #Ужасы:checked+label .Ужасы {
     color: #fff;
     background-color: #FF2C2C;
- 
+
 }
 
 /* Фэнтэзи */
 .Фэнтези {
     line-height: 17px;
-color: #521392;
+    color: #521392;
 
 
-background: #CD9BFF;
-border-radius: 20px;
+    background: #CD9BFF;
+    border-radius: 20px;
     color: #521392;
 
 }
@@ -325,12 +346,22 @@ border-radius: 20px;
 
 }
 
+.main_date {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 9px;
+    line-height: 15px;
+    /* identical to box height */
+
+
+    color: #A4A4A4;
+}
 
 /* Ярлыки (некликабельные)
 ----------------------------------*/
 
 .work_genre {
-    display: block;
+    display: blo ck;
     width: 157px;
     padding: 9px 0;
     border: 1px solid;
@@ -384,8 +415,14 @@ border-radius: 20px;
     border-color: #CD9BFF;
 }
 
-.work_humor {
+.work_Юмор {
     color: #FF9900;
     background: #FFF387;
     border-color: #FFF387;
+}
+
+
+/* МОИ */
+.titleDesc_items button {
+    display: inline;
 }

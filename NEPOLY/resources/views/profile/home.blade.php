@@ -1,6 +1,6 @@
 {{-- ГЛАВНЫЙ ПРОФИЛЬ ПОЛЬЗОВАТЕЛЯ --}}
 @extends('styles')
-
+<link rel="stylesheet" href="{{ asset('css/tags.css') }}">
 @section('title')
 Profile
 @endsection
@@ -10,7 +10,7 @@ Profile
     <div class="row justify-content-center">
 
         <div class="col-md-6 profile">
-            <img src="{{ asset('img/ava.png') }}" alt="">
+            <img class="img-thumbnail" src="{{ asset('img/ava.png') }}" alt="">
             <h1 class="text-center">{{Auth::user()->name}} {{Auth::user()->surname}}</h1>
 
         </div>
@@ -34,39 +34,93 @@ Profile
 
         <h2>Все работы</h2>
         <div class="row">
-            <div class="col-md-12  ">
-                @if (Session::has('info'))
-                {{Session::get('info')}}
-                @endif
-                @foreach ($history as $his_item)
+            @if (Session::has('info'))
+            {{Session::get('info')}}
+            @endif
+            @foreach ($history as $his_item)
+            <div class="col-md-11 ">
+             
+              
                 <div class="history__one index__history_head">
     
                     <div class="index__history_header ">
-                        <h3 class="d-inline history_one__h3"><a href=""> {{$his_item->title}}</a></h3>
-                        <div class="img_like d-inline"><img src="{{ asset('img/i2.png') }}" alt="">
-                            <b>234</b></div>
-                        <div class="img_comm d-inline"><img src="{{ asset('img/i1.png') }}" class="" alt="">
-                            <b>123</b></div>
-    
-                        <span class="float-right">{{$his_item->genresId->name}}</span>
+                        <div class="row">
+                            <div class="col-md-7">
+                                {{-- h3 --}}
+                                <h3 class="d-inline "><a href="{{ route('addPar', ['id'=> $his_item->id]) }}" class="history_one__h3"> {{$his_item->title}}</a>
+                                </h3>
+                            </div>
+                            <div class="col-md-3">
+                                {{-- текстовые иконы --}}
+                                <div class="tIcons align-self-center">
+                                    <div class="img_like d-inline"><img src="{{ asset('img/i2.png') }}" alt="">
+                                            <b></b>
+
+                                        <b>{{$his_item->comments()->where('post_id', $his_item->id)->count()}}</b></div>
+                                    <div class="img_comm d-inline"><img src="{{ asset('img/i1.png') }}" class=""
+                                            alt="">
+                                        <b>123</b></div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+
+                                {{-- тег --}}
+                                <span id="{{$his_item->genresId->name}}"
+                                    class=" float-right work_genre work_{{$his_item->genresId->name}}">{{$his_item->genresId->name}}</span>
+                            </div>
+
+                        </div>
+                       
                     </div>
                     <div class="index__history_date">
                         <span class=" index__history_spanOne">{{$his_item->userId->name}}</span> <span
-                            class="index__history_spanTwo">11.22.2021</span> <span class="float-right ">Завершена!</span>
+                            class="index__history_spanTwo">{{$his_item->created}}</span> <span class="float-right ">{{$his_item->status}}</span>
                     </div>
                     <div class="index__history_p">
                         <p>{{$his_item->text}}</p>
                     </div>
                 </div>
-                @endforeach
+   
+          
     
     
             </div>
+
+                           {{-- КНОПКИ ДЛЯ ИСТОРИЙ --}}
+                           <div class="col-md-1 d-flex align-self-center">
+                            <div class="editSum">
+                                <div class="editSum_completed mb-1">
+                                    {{-- ИСТОРИЯ ЗАВЕРШЕНА --}}
+                                    @if ($his_item->status == 'В процессе')
+                                    <form method="POST" action="{{ route('finish') }}">@csrf
+                                        <input type="hidden" name="finish_id" value="{{$his_item->id}}"> 
+                                        <button><img width="44px" src="{{ asset('img/check 1.png') }}" alt=""></button> </form>
+                                    @endif
+                                 
+                                </div>
+                                <div class="editSum_edit mb-1">
+                                    {{-- РЕДАКТИРОВАНИЕ ИСТОРИИ --}}
+                                    <form method="get" action="{{ route('addPar', ['id'=> $his_item->id]) }}">@csrf
+                                        <input type="hidden" name="finish_id" value="{{$his_item->id}}"> 
+                                        <button><img width="44px" src="{{ asset('img/pencil 1.png') }}" alt=""></button> </form>
+</div>
+                                <div class="editSum_del  mb-1">
+                                    {{-- УДАЛИТЬ ИСТОРИЮ --}}
+                                    <form action="{{ route('delete') }}" method="post">
+                                    @csrf <button>
+                                        <input type="hidden" name="del_id" value="{{$his_item->id}}"> <img src="{{ asset('img/delete 1.png') }}" alt=""></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+            @endforeach
         </div>
     </div>
     
- 
+
 </div>
+
+@include('footer')
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
 </script>

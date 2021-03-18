@@ -1,11 +1,12 @@
 {{-- ДОБАВЛЕНИЕ НОВОЙ ГЛАВЫ --}}
-@extends('layouts.app')
+@extends('styles')
 <link rel="stylesheet" href="{{ asset('css/par.css') }}">
-@section('content')
+
 @section('title')
 Добавление главы
 @endsection
 <div class="container">
+    @include('header')
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <h1 class='text-center'>Добавление главы</h1>
@@ -14,22 +15,21 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-
-            {{-- form --}}
-            @foreach ($get as $g)
-
-
-            <form action="asd?id={{$g->id}}" method="POST">
+                   {{-- form --}}
+            <form action="{{ route('addParText') }}" method="POST">
                 @csrf
-                <input type="text" name='add-name' class="par-name par">
+                <input type="hidden" value="{{$par->id}}" name="history_id">
+                <input type="text" name='title' class="par-name par">
                 <div class="w-100"></div>
-                <textarea id="" cols="30" name="add-text" class="par-text par" rows="10"></textarea>
+                <textarea id="" cols="30" name="text" class="par-text par" rows="10"></textarea>
                 <div class="w-100"></div>
                 <button type="submit" class="par-btn">Готово</button>
+                <button type="submit" class="par-btn">Назад</button>
             </form>
-            @endforeach
+     
         </div>
     </div>
 
 </div>
-@endsection
+
+@include('footer')

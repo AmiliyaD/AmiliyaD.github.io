@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\authorController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HistoryParController;
 use App\Models\HistoryText;
 use Illuminate\Support\Facades\Route;
@@ -9,6 +10,7 @@ use App\Http\Controllers\homeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\searchController;
 use App\Models\HistoryPar;
+use Illuminate\Routing\RouteRegistrar;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,12 +28,28 @@ Route::get('/', [homeController::class,'index'])->name('index');
 // ДОБАВИТЬ РАБОТУ
 Route::get('addHistory', [HistoryTextController::class, 'index'])->middleware(['auth'])->name('add');
 // СМОТРЕТЬ ВСЕ РАБОТЫ
-Route::get('showWorks', [HistoryParController::class, 'index'])->name('show');
+Route::get('showWorks', [HistoryParController::class, 'index'])->middleware(['auth'])->name('show');
 // СМОТРЕТЬ ВСЕХ ПОЛЬЗОВАТЕЛЕЙ
-Route::get('allAuthors', [authorController::class, 'index'])->name('author');
+Route::get('allAuthors', [authorController::class, 'index'])->middleware(['auth'])->name('author');
 // ПОИСК РАБОТ
-Route::get('search', [searchController::class, 'index'])->name('search');
+Route::get('search', [searchController::class, 'index'])->middleware(['auth'])->name('search');
 
+
+// ОТКРЫТЬ ФОРМУ ДЛЯ ДОБАВЛЕНИЯ НОВОЙ ГЛАВЫ
+Route::get('addPar/{id}', [HistoryTextController::class, 'show'])->middleware(['auth'])->name('addPar');
+//форма для новой главы
+Route::get('addParT/{id}', [HistoryParController::class, 'show'])->middleware(['auth'])->name('addParT');
+// ДОБАВИТЬ НОВУЮ ГЛАВУ
+Route::post('addParText', [HistoryTextController::class, 'edit'])->middleware(['auth'])->name('addParText');
+//ОБНОВИТЬ РАБОТУ
+Route::post('update', [HistoryParController::class, 'update'])->middleware(['auth'])->name('update');
+Route::get('showWork/{id}', [HistoryTextController::class, 'showWork'])->name('showWork');
+
+//ДОБАВИТЬ ГЛАВУ ВСЮ
+Route::get('editPar/{ed_id}',[HistoryTextController::class, 'openPar'] )->middleware(['auth'])->name('editPar');
+Route::post('updatePar', [HistoryTextController::class, 'update'])->name("updatePar");
+// УДАЛИТЬ РАБОТУ
+Route::post('deletePar', [HistoryParController::class, 'destroy'])->middleware(['auth'])->name("delete");
 
 
 // ДОБАВЛЕНИЕ РАБОТЫ
@@ -39,4 +57,10 @@ Route::post('addwork',[HistoryTextController::class, 'store'])->middleware(['aut
 // ПРОФИЛЬ ПОЛЬЗОВАТЕЛЯ
 Route::get('/dashboard', [ProfileController::class,'index'])->middleware(['auth'])->name('dashboard');
 
+// ДОБАВИТЬ КОММЕНТАРИЙ
+Route::post('addComment',[CommentController::class, 'store'] )->middleware(['auth'])->name('addComment');
+
+
+// РАБОТА ЗАВЕРЕШЕНА
+Route::post('workFinished', [HistoryParController::class, 'finishWork'])->middleware(['auth'])->name('finish');
 require __DIR__.'/auth.php';

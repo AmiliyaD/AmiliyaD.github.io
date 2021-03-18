@@ -36,6 +36,14 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         //
+        $addComment = new Comment;
+        $addComment->user_id = $request->authId;
+        $addComment->post_id = $request->historyId;
+        $addComment->comment_text = $request->commentText;
+        $addComment->commentAuthor = $request->author;
+        $addComment->save();
+         $request->session()->flash('info', 'Комментарий успешно добавлен!');
+        return redirect()->route('showWork', ['id'=> $request->historyId]);
     }
 
     /**

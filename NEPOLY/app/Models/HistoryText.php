@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+// BODY ИСТОРИИ
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,12 +9,18 @@ class HistoryText extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    public function genresId() {
-        return $this->hasOne(Genre::class, 'id', 'genre_id');
-    }
-    public function userId()
+    
+    // public function genresId() {
+    //     return $this->hasOne(Genre::class, 'id', 'genre_id');
+    // }
+    // public function userId()
+    // {
+    //     return $this->hasOne(User::class, 'id', 'user_id');
+    //     # code...
+    // }
+    public function comments()
     {
-        return $this->hasOne(User::class, 'id', 'user_id');
+        return $this->hasMany(Comment::class, 'id', 'post_id');
         # code...
     }
 }

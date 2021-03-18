@@ -20,20 +20,14 @@
               <li class="nav-item">
                 <a class=" " href="{{ route('search') }}" tabindex="-1" aria-disabled="true">Поиск</a>
               </li>
-              
+              {{-- {{Auth::user()->name}} --}}
             </ul>
             <ul class="navbar-nav ml-auto">
                 @if (Auth::check())
                 <li class="nav-item authCheck">
-                    <a class=""  style="color: #FF008A;" href="{{ route('dashboard') }}" tabindex="-1" aria-disabled="true">{{Auth::user()->name}}</a>
+                    <a class=""  style="color: #FF008A;" href="{{ route('dashboard') }}" tabindex="-1" aria-disabled="true">Профиль  <img src="{{ asset('img/user 1.png') }}" alt=""></a>
                   </li>
-                  {{-- <form action="{{ route('logout') }}" method="post">
-                    @csrf
-                    <li class="nav-item">
-                        <a class="" href="#" tabindex="-1" aria-disabled="true"><button class="no-btn"> Выход</button></a>
-                      </li>
-
-                </form> --}}
+               
                 @else 
                 <li class="nav-item authCheck">
                     <a class="pink"  style="color: #FF008A;" href="{{ route('login') }}" tabindex="-1" aria-disabled="true">Вход</a>

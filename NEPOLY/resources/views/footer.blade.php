@@ -1,4 +1,4 @@
-<div class="bg_grey_footer">
+<div class="bg_grey_footer footer">
     <div class="container grey__footer">
         <div class="row footer__row">
             <div class="col-md-12">
