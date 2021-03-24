@@ -27,4 +27,8 @@ class HistoryPar extends Model
         return $this->hasMany(Comment::class,'post_id', 'id');
         # code...
     }
+    public function getAllComments()
+    {
+        return $this->hasOneThrough(CommentPar::class, HistoryText::class, 'history_id', 'history_parId');
+    }
 }

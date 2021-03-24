@@ -35,7 +35,7 @@ body {
 }
 
 .gr,
-.se-2-gr {
+.se-2-gr, .Боевик {
     border: 1px solid #179B5C;
     font-style: normal;
     font-weight: normal;
@@ -69,7 +69,7 @@ body {
     outline: none;
 }
 
-.se-2-b {
+.se-2-b, .Драма {
 
     border: 1px solid #00BCD6;
     box-sizing: border-box;
@@ -84,7 +84,7 @@ body {
 
 }
 
-.se-2-g {
+.se-2-g, .Детектив, .Криминал {
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
@@ -97,7 +97,7 @@ body {
     border-radius: 25px;
 }
 
-.se-2-s {
+.se-2-s, .Приключения {
     border: 1px solid #0029FF;
     box-sizing: border-box;
     border-radius: 25px;
@@ -109,7 +109,7 @@ body {
     color: #0029FF;
 }
 
-.se-2-p {
+.se-2-p, .Романтика {
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
@@ -122,7 +122,7 @@ body {
     border-radius: 25px;
 }
 
-.se-2-r {
+.se-2-r, .Ужасы {
 
     border: 1px solid #FF2C2C;
     box-sizing: border-box;
@@ -135,7 +135,7 @@ body {
     color: #FF2C2C;
 }
 
-.se-2-ph {
+.se-2-ph, .Фэнтези {
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
@@ -149,7 +149,7 @@ body {
     border-radius: 25px;
 }
 
-.se-2-y {
+.se-2-y, .Юмор {
     font-style: normal;
     font-weight: normal;
     font-size: 15px;

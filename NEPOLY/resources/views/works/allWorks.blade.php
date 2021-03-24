@@ -41,7 +41,7 @@
                     <div class="row">
                         <div class="col-md-7">
                             {{-- h3 --}}
-                            <h3 class="d-inline "><a href="" class="history_one__h3"> {{$his_item->title}}</a>
+                            <h3 class="d-inline "><a href="{{ route('showWork', ['id'=>$his_item->id]) }}" class="history_one__h3"> {{$his_item->title}}</a>
                             </h3>
                         </div>
                         <div class="col-md-3">
@@ -50,7 +50,7 @@
                                 <div class="img_like d-inline"><img src="{{ asset('img/i2.png') }}" alt="">
 
 
-                                    <b>234</b></div>
+                                    <b>{{$his_item->comments()->where('post_id', $his_item->id)->count() + $his_item->getAllComments()->where('history_id', $his_item->id)->count()}}</b></div>
                                 <div class="img_comm d-inline"><img src="{{ asset('img/i1.png') }}" class=""
                                         alt="">
                                     <b>123</b></div>

@@ -19,9 +19,9 @@
             <form action="{{ route('addParText') }}" method="POST">
                 @csrf
                 <input type="hidden" value="{{$par->id}}" name="history_id">
-                <input type="text" name='title' class="par-name par">
+                <input type="text" placeholder="Название" name='title' class="par-name par">
                 <div class="w-100"></div>
-                <textarea id="" cols="30" name="text" class="par-text par" rows="10"></textarea>
+                <textarea id="" placeholder="Текст"  cols="30" name="text" class="par-text par" rows="10"></textarea>
                 <div class="w-100"></div>
                 <button type="submit" class="par-btn">Готово</button>
                 <button type="submit" class="par-btn">Назад</button>

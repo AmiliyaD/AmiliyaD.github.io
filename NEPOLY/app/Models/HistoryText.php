@@ -21,6 +21,12 @@ class HistoryText extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class, 'id', 'post_id');
+   
+    }
+  
+    public function historyPar()
+    {
+        return $this->belongsTo(HistoryPar::class,'history_id', 'id');
         # code...
     }
 }

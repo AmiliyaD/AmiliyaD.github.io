@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\CommentPar;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -46,6 +47,18 @@ class CommentController extends Controller
         return redirect()->route('showWork', ['id'=> $request->historyId]);
     }
 
+    public function storePar(Request $request)
+    {
+        $addCommentPar = new CommentPar;
+        $addCommentPar->user_id = $request->authId;
+        $addCommentPar->history_parId = $request->historyId;
+        $addCommentPar->commentText = $request->commentText;
+        $addCommentPar->commentAuthor = $request->author;
+        $addCommentPar->save();
+
+        $request->session()->flash('info', 'Комментарий к главе успешно добавлен');
+        return redirect()->route('showWorkPar', ['par_id'=>$request->historyId]);
+    }
     /**
      * Display the specified resource.
      *

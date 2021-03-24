@@ -5,13 +5,17 @@
 /* General 
 ----------------------------------------------*/
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-*:focus {outline: none;}
+*:focus {
+    outline: none;
+}
 
 body {
     background: #fff;
@@ -53,15 +57,15 @@ input {
 .textarea_text::-webkit-scrollbar {
     width: 10px
 }
- 
+
 .textarea_text::-webkit-scrollbar-track {
     background-color: #f7f7f7;
     border-radius: 10px;
 }
- 
+
 .textarea_text::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color:#fa95c7;
+    background-color: #fa95c7;
 }
 
 .buttons {
@@ -87,7 +91,9 @@ input {
     background: #ff7cc3;
 }
 
-
+img {
+    border: none;
+}
 
 /* Header (with profile)
 ----------------------------------------------*/
@@ -125,7 +131,7 @@ header {
 
 .profile {
     display: flex;
-    align-items: center; 
+    align-items: center;
 }
 
 .profile:hover .profile_text {
@@ -196,7 +202,7 @@ header {
     top: -8px;
 }
 
-.burger_item:after{
+.burger_item:after {
     bottom: -8px;
 }
 
@@ -211,7 +217,7 @@ header {
 
 .footer_credits {
     padding: 39px 0;
-    background-color: #C8C8C8; 
+    background-color: #C8C8C8;
     text-align: center;
     color: #fff;
 }
@@ -238,12 +244,12 @@ header {
 @media screen and (max-width: 992px) {
     .container {
         width: 720px;
-    }   
-    
+    }
+
     header {
         position: relative;
     }
-    
+
     .subnav {
         display: none;
         position: absolute;
@@ -254,23 +260,23 @@ header {
         top: 100%;
         background: rgba(235, 235, 235, 0.76);
     }
-    
+
     .subnav.show {
         display: flex;
     }
-    
+
     .profile_forburger {
         display: block;
     }
-    
+
     .subnav_link {
         padding: 7px 15px;
     }
-    
+
     .profile {
         display: none;
     }
-    
+
     .burger {
         display: block;
     }
@@ -287,25 +293,25 @@ header {
 @media screen and (max-width: 576px) {
     .container {
         width: 90%;
-    }  
-    
+    }
+
     .btn {
         font-size: 18px;
         padding: 10px 0;
     }
-    
+
     input {
         font-size: 14px;
     }
-    
+
     .footer_credits p {
         font-size: 10px;
     }
-    
+
     .footer_credits {
         padding: 20xp 0;
     }
-    
+
     .footer_nav {
         padding: 30px 0;
     }

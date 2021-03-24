@@ -17,7 +17,7 @@ class homeController extends Controller
     {
         //
         $id= HistoryPar::all()->get('id');
-        $his = HistoryPar::all();
+        $his = HistoryPar::all()->take(4);
         // $hi2s = HistoryPar::find(3)->comments()->get()->count();
         
         

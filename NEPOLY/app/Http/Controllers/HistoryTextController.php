@@ -127,8 +127,14 @@ class HistoryTextController extends Controller
      * @param  \App\Models\HistoryText  $historyText
      * @return \Illuminate\Http\Response
      */
-    public function destroy(HistoryText $historyText)
+    public function destroy(HistoryText $historyText, Request $request)
     {
+
+        $delPar = HistoryText::find($request->his_id);
+        $delPar->delete();
+                 
+        $request->session()->flash('info', 'Глава успешно удалена!');
+        return redirect()->route('addPar', ['id'=> $request->history]);
         //
     }
 }

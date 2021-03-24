@@ -5,6 +5,9 @@ use App\Models\HistoryPar;
 use App\Models\HistoryText;
 use Illuminate\Http\Request;
 use App\Models\Comment;
+use App\Models\CommentPar;
+use App\Models\Genre;
+
 class HistoryParController extends Controller
 {
     /**
@@ -22,9 +25,9 @@ class HistoryParController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request, $par_id)
     {
-        //
+        return view('works.showParWork', ['historyPar'=> HistoryText::find($par_id), 'comments'=> CommentPar::where('history_parid', $par_id)->get()] );
     }
 
     /**
@@ -103,7 +106,9 @@ class HistoryParController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request, HistoryPar $historyPar)
-    {
+    { 
+        // $delComment = HistoryPar::where('id', $request->del_id)->comments->get();
+        // return $delComment;
         // // ПОЛНОЕ УДАЛЕНИЕ ИСТОРИИ
         $commetn = Comment::where('post_id', $request->del_id);
         $commetn->delete();
@@ -113,11 +118,16 @@ class HistoryParController extends Controller
 
         $del = HistoryPar::find($request->del_id);
         $del->delete();
-        
+
+       
         // после удаления
         $request->session()->flash('info', 'История удалена!');
         return redirect()->route('dashboard');
 
         //
     }
+
+
+
+   
 }

@@ -37,6 +37,7 @@ BookOfBooks
                     @foreach ($histor as $his_item)
                     <div class="history__one index__history_head">
                         {{-- HEADER ИСТОРИИ --}}
+               
                         <div class="index__history_header ">
                             <div class="row">
                                 <div class="col-md-7">
@@ -49,7 +50,7 @@ BookOfBooks
                                     <div class="tIcons align-self-center">
                                         <div class="img_like d-inline"><img src="{{ asset('img/i2.png') }}" alt="">
 
-                                            <b>{{$his_item->comments()->where('post_id', $his_item->id)->count()}}</b></div>
+                                            <b>{{$his_item->comments()->where('post_id', $his_item->id)->count() + $his_item->getAllComments()->where('history_id', $his_item->id)->count()}}</b></div>
                                         <div class="img_comm d-inline"><img src="{{ asset('img/i1.png') }}" class=""
                                                 alt="">
                                             <b>123</b></div>
@@ -70,9 +71,9 @@ BookOfBooks
                             <span class=" index__history_spanOne">{{$his_item->userId->name}}</span> <span
                                 class="index__history_spanTwo main_date ">{{$his_item->created}}</span>
                                 @if ($his_item->status == 'В процессе')
-                                <span class="float-right in_progress_main">{{$his_item->status}}</span>
+                                <p class="in_progress_main float-right ">{{$his_item->status}}</p>
                                 @else
-                                <span class="float-right in_completed_main ">{{$his_item->status}}</span>
+                                <p class="float-right in_completed_main ">{{$his_item->status}}</p>
                                 @endif
                                 
                                 

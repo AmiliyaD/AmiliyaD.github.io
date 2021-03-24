@@ -16,7 +16,7 @@
 <div class="col-md-12 h1">
 
     <h1 class="text-center">{{$work->title}}</h1>
-    <p class='text-center'>{{$work->userId->name}}</p>
+    <h3 class='text-center'>{{$work->userId->name}}</h3>
 </div>
 <div class="col-md-12 history_titleDesc">
     <div class="titleDesc_bg">
@@ -47,7 +47,7 @@
         @endif
             @foreach ($work->historyText as $item)
            
-            <li><a href=""> {{$item->history_title}}</a></li>
+            <li><a href="{{ route('showWorkPar', ['par_id'=>$item->id]) }}"> {{$item->history_title}}</a></li>
             @endforeach
         </ul>
 
