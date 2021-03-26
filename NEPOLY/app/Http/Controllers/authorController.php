@@ -16,6 +16,11 @@ class authorController extends Controller
         return view('works.allAutors', ['authors'=>User::all()]);
     }
 
+    public function searchAuthors(Request $request)
+    {
+        $history = User::where("name", "like", "$request->name%")->get();
+        return view('works.allAutors', ['authors'=>$history]);
+    }
     /**
      * Show the form for creating a new resource.
      *

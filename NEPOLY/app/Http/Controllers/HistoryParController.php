@@ -20,6 +20,11 @@ class HistoryParController extends Controller
         return view('works.allWorks', ['history'=>HistoryPar::all()]);
     }
 
+    public function showSearch(Request $request)
+    {
+        $history = HistoryPar::where("title", "like", "$request->name%")->get();
+        return view('works.allWorks', ['history'=>$history]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -61,7 +66,7 @@ class HistoryParController extends Controller
      */
     public function edit(HistoryPar $historyPar)
     {
-        //
+        
     }
 
     /**
@@ -92,10 +97,7 @@ class HistoryParController extends Controller
         $finish = HistoryPar::find($request->finish_id);
         $finish->status = 'Завершен';
         $finish->save();
-        // if ($finish->status == 'Завершен') {
-        //     $request->session()->flash('info', 'Вы уже завершили историю!');
-        //     return redirect()->route('dashboard');
-        // }
+
         $request->session()->flash('info', 'История завершена!');
         return redirect()->route('dashboard');
     }

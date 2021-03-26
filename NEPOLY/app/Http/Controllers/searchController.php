@@ -29,8 +29,7 @@ class searchController extends Controller
 
     public function searchFunc(Request $request)
     {
-    
-     
+
         $genres = Genre::all();
         // ПОИСК ПО НАЗВАНИЮ
         if (!empty($request->title)) {
@@ -45,16 +44,19 @@ class searchController extends Controller
                 return view('works.search', ['genres'=>$genres], ['searchResults'=>$search]);
     
             }
+  
             // поиск без других кнопок
             $search = HistoryPar::where("title", "like", "$request->title%")->get();
             return view('works.search', ['genres'=>$genres], ['searchResults'=>$search]);
           
         }
+
+        // ПОИСК ПО ЖАНРУ
         if($request->genre) {
             $search = Genre::find($request->genre)->histories;
             return view('works.search', ['genres'=>$genres], ['searchResults'=>$search]);
         }
-// ПОИСК ПО СТАТУСУ
+        // ПОИСК ПО СТАТУСУ
         if ($request->status == "Завершен") {
             $search = HistoryPar::where("status", "Завершен")->get();
             return view('works.search', ['genres'=>$genres], ['searchResults'=>$search]);
@@ -64,9 +66,20 @@ class searchController extends Controller
           
             return view('works.search', ['genres'=>$genres], ['searchResults'=> HistoryPar::where("status", "В процессе")->get()]);
 
-    }
-
-
+         }
+        //  ПОИСК ПО ДАТЕ
+        if ($request->date_from) {
+            $search = HistoryPar::where('created', '>', $request->date_from)->get();
+            return view('works.search', ['genres'=>$genres], ['searchResults'=>$search]);
+        }
+        if ($request->date_to) {
+            $search = HistoryPar::where('created', '<', $request->date_to)->get();
+            return view('works.search', ['genres'=>$genres], ['searchResults'=>$search]);
+        }
+        if ($request->date_from && $request->date_to) {
+            $search = HistoryPar::where('created', '<', $request->date_to)->where('created', '>', $request->date_from)->get();
+            return view('works.search', ['genres'=>$genres], ['searchResults'=>$search]);
+        }
     }
 
     public function create()

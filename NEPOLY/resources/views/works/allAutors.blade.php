@@ -18,9 +18,13 @@
         <div class="col-md-5 col-sm-12 col-12 align-baseline ">
             <div class="r d-flex flex-column">
             <h2 class="text-center">Все авторы</h2>
-            <input type="text" name="" id="" class="inc" placeholder="Введите имя автора">
+            <form action="{{ route('searchAuthors') }}" method="get">
+                <input type="text" name="name" id="" class="inc" placeholder="Введите имя автора">
            
-            <button class="btn btn-success">Найти</button>
+                <button class="btn btn-success">Найти</button>
+
+            </form>
+            
         </div>
         </div>
     </div>

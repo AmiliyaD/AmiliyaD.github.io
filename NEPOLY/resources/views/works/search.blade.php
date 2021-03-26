@@ -60,11 +60,11 @@
                 {{-- row-5 --}}
                 
                 <div class="col-md-5">
-                    <div class="se-4 b se-4-d"><input type="date" placeholder="Дата от &darr;" class="date-in" name="" id=""
+                    <div class="se-4 b se-4-d"><input type="date" placeholder="Дата от &darr;" class="date-in" name="date_from" id=""
                             onfocus="(this.type='date')"></div>
                 </div>
                 <div class="col-md-5">
-                    <div class="se-4 b se-4-d"><input type="date" class="date-in" name="" id=""
+                    <div class="se-4 b se-4-d"><input type="date"  class="date-in" name="date_to" id=""
                             onfocus="(this.type='date')"></div>
                 </div>
     
