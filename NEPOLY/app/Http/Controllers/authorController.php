@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\HistoryPar;
 class authorController extends Controller
 {
     /**
@@ -48,9 +49,9 @@ class authorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($userId)
     {
-        //
+        return view('authorProfile.authorProfile', ['user'=>User::where('id', $userId)->first()], ['history'=>HistoryPar::where("user_id", $userId)->get()]);
     }
 
     /**

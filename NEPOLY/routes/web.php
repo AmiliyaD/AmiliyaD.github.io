@@ -41,8 +41,12 @@ Route::get('search', [searchController::class, 'index'])->name('search');
 Route::get('searchFunc', [searchController::class, 'searchFunc'])->name('searchFunc');
 // ПОИСК РАБОТ ВО "ВСЕХ РАБОТАХ"
 Route::get("searchShowWorks", [HistoryParController::class, 'showSearch'])->name("showSearch");
-
+// ПОИСК АВТОРА
 Route::get('searchAuthors', [authorController::class, 'searchAuthors'])->name("searchAuthors");
+// ПРОСМОТР ПРОФИЛЯ ОДНОГО АВТОРА
+Route::get('profileAuthor/{userId}', [authorController::class, 'show'])->name('authorProfile');
+
+
 
 // 2.  В РАБОТЕ 
 
@@ -86,6 +90,5 @@ Route::post('deleteOnePar',[HistoryTextController::class, 'destroy'])->middlewar
 
 
 
-// 4. ПРОФИЛЬ АВТОРА
 
 require __DIR__.'/auth.php';

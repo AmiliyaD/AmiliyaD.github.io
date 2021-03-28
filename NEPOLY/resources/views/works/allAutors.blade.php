@@ -31,11 +31,11 @@
     {{-- header --}}
 
     {{-- autors --}}
-    <div class="row autors">
+    <div class="row autors margin-top" >
         @foreach ($authors as $a)
         <div class="col-6 d-inline">
-            <img src="{{ asset('img/av.png') }}" alt="" class="d-inline">
-            <a><p>{{ $a->name }}</p></a>
+          <a href="{{ route('authorProfile', ['userId'=>$a->id]) }}"><img src="{{ asset('img/av.png') }}" alt="" class="d-inline">
+            <p>{{ $a->name }}</p></a>  
  
             </div>
         @endforeach
