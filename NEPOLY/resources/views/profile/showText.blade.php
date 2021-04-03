@@ -66,8 +66,10 @@ Edit work
         </div>
         <div class="row showText__buttons">
             <div class="col-md-5"><button class="allButtons">Сохранить изменения</button></div>
-            <div class="col-md-5"><a href="{{ route('addParT', ['id'=>$par->id]) }}" class="allButtons">Добавить новую
-                    главу</a></div>
+            <div class="col-md-5">
+                <button><a href="{{ route('addParT', ['id'=>$par->id]) }}" class="allButtons allButtons_a">Добавить новую
+                    главу</a></button>
+                </div>
         </div>
     </form>
 

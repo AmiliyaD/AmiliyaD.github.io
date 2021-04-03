@@ -24,8 +24,8 @@
             <div class="formAll_form">
                 <form action="" method="post">
                     @csrf
-                <input type="text" class="form-control inputAll" name="email" placeholder="login">
-                <input type="text" class="form-control inputAll" name="password" placeholder="password">
+                <input type="text" class="form-control inputAll" name="email" placeholder="Логин">
+                <input type="text" class="form-control inputAll" name="password" placeholder="Пароль">
                 <button class="btn btn-success buttonAll">Войти</button>
                 </form>
                 <a href="{{ route('register') }}" class="authA">Еще нет аккаунта? Зарегистрируйтесь</a>

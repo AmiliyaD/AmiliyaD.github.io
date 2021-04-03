@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="{{ asset('css/allWorks.css') }}">
+<link rel="stylesheet" href="{{ asset('css/adminProfile.css') }}">
 <link rel="stylesheet" href="{{ asset('css/tags.css') }}">
 @extends('styles')
 
@@ -33,7 +34,7 @@
     
     {{-- autors --}}
     {{-- stories --}}
-    <div class="row ">
+    <div class="row allHeadr">
     
         <div class="w-100"></div>
         <div class="col-md-12  ">
@@ -62,8 +63,17 @@
                         <div class="col-md-2">
 
                             {{-- тег --}}
+                            @if (!empty($his_item->genresId->colorBack))
+                            <span id="{{$his_item->genresId->name}}"
+                                class=" float-right work_genre work_{{$his_item->genresId->name}} {{$his_item->genresId->colorText}}"  style="background-color: {{$his_item->genresId->colorBack}}; color: {{$his_item->genresId->colorText}}; border: none">{{$his_item->genresId->name}}</span>
+        
+                                
+                            @else
                             <span id="{{$his_item->genresId->name}}"
                                 class=" float-right work_genre work_{{$his_item->genresId->name}}">{{$his_item->genresId->name}}</span>
+                            @endif
+   
+                           
                         </div>
 
                     </div>
@@ -82,7 +92,18 @@
                 <div class="index__history_p">
                     <p>{{$his_item->text}}</p>
                 </div>
+                
             </div>
+
+                 {{-- проверка на администратора  --}}
+     @if (Auth::check())
+     @if (Auth::user()->roleName == 'Admin')
+     <form class="adminButton" method="POST" action="{{ route('delete') }}">
+         @csrf
+         <button class= "adminButton-delPar adminButton " name="del_id" value="{{$his_item->id}}">Удалить работу</button>
+     </form>
+     @endif
+     @endif
             @endforeach
 
     

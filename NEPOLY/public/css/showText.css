@@ -6,9 +6,14 @@ button {
 img {
     border: none;
 }
+
 .showText_Bg {
     margin-top: 100px;
     margin-bottom: 30px;
+}
+
+.marginBottom {
+    margin-bottom: 70px;
 }
 
 .showText_h3 h3 {
@@ -48,7 +53,13 @@ img {
     margin-top: 60px;
 }
 
-.showText__button button {
+.allButtons_a {
+    text-decoration: none;
+    margin: 0;
+}
+
+.showText__button button,
+.allButtons_a {
     /* background: #CD9BFF; */
     border-radius: 40px;
     font-style: normal;
@@ -105,7 +116,16 @@ img {
 .history_title {
     margin-top: 100px;
 }
+.history_titleH1 {
+    font-style: normal;
+font-weight: bold;
+font-size: 54px;
+line-height: 66px;
+/* identical to box height */
 
+
+color: #000000;
+}
 .history_par {
     margin-top: 50px;
 }

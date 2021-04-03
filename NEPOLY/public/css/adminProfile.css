@@ -1,0 +1,77 @@
+.adminGenres {
+    margin-top: 70px;
+}
+
+.adminGenres div {
+
+    margin-top: 34px;
+}
+
+.adminText {
+
+    border: 3px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 40px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #C4C4C4;
+
+    padding-right: 38px;
+    padding-top: 18px;
+    padding-bottom: 19px
+}
+
+.adminButton {
+
+    border-radius: 50px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 27px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    color: #FFFFFF;
+}
+
+.adminButton-add {
+    background: #FF008A;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.adminButton-del {
+    background: #FF7575;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.adminButton-delPar {
+    background: #FF7575;
+    border-radius: 50px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* DEL - GENRE */
+.del-genre {
+    margin-top: 70q;
+}
+
+.del-genre_header {
+    margin-top: 20px;
+}
+
+.del-genre_footer {
+    margin-top: 54px;
+}
+
+.adminCheck {
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 5px;
+}

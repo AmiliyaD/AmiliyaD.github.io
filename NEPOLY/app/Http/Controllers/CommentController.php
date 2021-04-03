@@ -36,7 +36,12 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'commentText' => 'required|min:1',
+            'authId' => 'required',
+        ]);
+
+
         $addComment = new Comment;
         $addComment->user_id = $request->authId;
         $addComment->post_id = $request->historyId;

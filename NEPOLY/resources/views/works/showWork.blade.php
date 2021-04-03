@@ -15,7 +15,7 @@
 <div class="row history_title">
 <div class="col-md-12 h1">
 
-    <h1 class="text-center">{{$work->title}}</h1>
+    <h1 class="text-center history_titleH1">{{$work->title}}</h1>
     <h3 class='text-center'>{{$work->userId->name}}</h3>
 </div>
 <div class="col-md-12 history_titleDesc">

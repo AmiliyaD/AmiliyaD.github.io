@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Genre;
 use App\Models\AdminAccount;
 use Illuminate\Http\Request;
 
@@ -35,7 +35,18 @@ class AdminAccountController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|bail',
+        ]);
+        $addGenre = new Genre;
+        $addGenre->name = $request->name;
+        $addGenre->colorBack = $request->colorBack;
+        $addGenre->colorText = $request->colorText;
+        $addGenre->save();
+
+        $request->session()->flash('info', "Новый жанр успешно добавлен");
+        return redirect()->route('dashboard');
+      
     }
 
     /**
@@ -78,8 +89,17 @@ class AdminAccountController extends Controller
      * @param  \App\Models\AdminAccount  $adminAccount
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AdminAccount $adminAccount)
+    public function destroy(Request $request, AdminAccount $adminAccount)
     {
-        //
+        $validated = $request->validate([
+            'checkedGenres' => 'required|bail',
+        ]);
+        for ($i = 0;  $i < count($request->checkedGenres); $i++) {
+          $delGenre = Genre::where('id', (int)$request->checkedGenres[$i]);
+          $delGenre->delete();
+         
+        }
+        $request->session()->flash('info', "Жанры успешно удалены");
+        return redirect()->route('dashboard');
     }
 }

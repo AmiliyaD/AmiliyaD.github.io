@@ -356,9 +356,24 @@
 
 /* Ярлыки (некликабельные)
 ----------------------------------*/
+.logout-button {
+
+    background: #EDEDED;
+    border-radius: 50px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 27px;
+    text-align: center;
+    color: #C4C4C4;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 90px;
+    padding-right: 140px;
+}
 
 .work_genre {
-    display: blo ck;
+    display: block;
     width: 157px;
     padding: 9px 0;
     border: 1px solid;

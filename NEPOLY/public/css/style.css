@@ -1,24 +1,30 @@
 * {
     outline: none;
 }
+
 button {
     background: none;
     border: none
 }
+
 body,
 img {
     border: none;
 }
+
 button {
     outline: none;
 }
+
 ul {
     padding: 0;
     margin: 0;
 }
+
 li {
     list-style: none;
 }
+
 a {
     font-style: normal;
     font-weight: normal;
@@ -29,6 +35,7 @@ a {
 
     color: #000000;
 }
+
 .pink {
     color: #FF008A;
 }
@@ -37,17 +44,23 @@ a {
 .editSum div {
     margin-top: 15px;
 }
-.editSum_completed:hover, .editSum_edit:hover, .editSum_del:hover {
+
+.editSum_completed:hover,
+.editSum_edit:hover,
+.editSum_del:hover {
     opacity: 50%;
 }
+
 /* HEADER  */
 .index-container__header ul li {
     margin-right: 30px;
 
 }
+
 .authCheck a {
     color: #FF008A;
 }
+
 .index-container__header ul li a {
     font-style: normal;
     font-weight: normal;
@@ -65,8 +78,9 @@ a {
     font-style: normal;
     font-weight: bold;
     font-size: 44px;
-    line-height: 66px;  
+    line-height: 66px;
 }
+
 .index__h1 {
     margin-top: 200px;
 }
@@ -83,21 +97,20 @@ a {
     font-weight: normal;
     font-size: 27px;
     line-height: 39px;
-
-
-
     color: #000000;
 }
+
 .allButtons {
     background: #FF008A;
     border-radius: 50px;
     font-style: normal;
     font-weight: bold;
-   
+
     line-height: 29px;
 
     color: #FFFFFF;
 }
+
 .index__h1_button {
 
     background: #FF008A;
@@ -130,16 +143,17 @@ a {
 .index__history_spanTwo {
     margin-left: 80px;
 }
-    
+
 .history_one__h3 {
     font-style: normal;
-font-weight: bold;
-font-size: 36px;
-line-height: 44px;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 44px;
 
 
-color: #000000;
+    color: #000000;
 }
+
 /* INDEX HISTORY */
 .index__history h3 {
     font-style: normal;
@@ -257,9 +271,11 @@ color: #000000;
 .profile {
     margin-top: 128px
 }
+
 .profile_allWork {
     margin-top: 128px;
 }
+
 @media (max-width: 750px) {
 
     .index__h1 h1,

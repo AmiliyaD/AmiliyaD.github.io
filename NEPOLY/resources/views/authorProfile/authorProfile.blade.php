@@ -1,12 +1,13 @@
 {{--  ПРОФИЛЬ ПОЛЬЗОВАТЕЛЯ --}}
 @extends('styles')
+<link rel="stylesheet" href="{{ asset('css/showText.css') }}">
 <link rel="stylesheet" href="{{ asset('css/tags.css') }}">
 @section('title')
 Author profile
 @endsection
 <div class="container authorProfile">
 @include('header')
-<div class="row">
+<div class="row showText_Bg">
     <div class="col-md-6 offset-md-3">
         <img src="{{ asset('img/ava.png') }}" alt="">
     </div>

@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="{{ asset('css/showText.css') }}">
 <link rel="stylesheet" href="{{ asset('css/allWorks.css')}}">
 @extends('styles')
 
@@ -31,7 +31,7 @@
     {{-- header --}}
 
     {{-- autors --}}
-    <div class="row autors margin-top" >
+    <div class="row autors  marginBottom mt-5" >
         @foreach ($authors as $a)
         <div class="col-6 d-inline">
           <a href="{{ route('authorProfile', ['userId'=>$a->id]) }}"><img src="{{ asset('img/av.png') }}" alt="" class="d-inline">

@@ -2,6 +2,7 @@
 @section('link')
 <link rel="stylesheet" href="{{ asset('css/bg.css') }}">
 <link rel="stylesheet" href="{{ asset('css/tags.css') }}">
+<link rel="stylesheet" href="{{ asset('css/adminProfile.css') }}">
 @endsection
 @section('title')
 BookOfBooks
@@ -59,6 +60,10 @@ BookOfBooks
                                 <div class="col-md-2">
 
                                     {{-- тег --}}
+                                    @if (!empty($his_item->genresId->colorBack))
+                                    <span id="{{$his_item->genresId->name}}"
+                                        class=" float-right work_genre work_{{$his_item->genresId->name}}" style="background-color: {{$his_item->genresId->colorBack}}; border: none ">{{$his_item->genresId->name}}</span>
+                                    @endif
                                     <span id="{{$his_item->genresId->name}}"
                                         class=" float-right work_genre work_{{$his_item->genresId->name}}">{{$his_item->genresId->name}}</span>
                                 </div>
@@ -82,6 +87,17 @@ BookOfBooks
                             <p>{{$his_item->text}}</p>
                         </div>
                     </div>
+                    {{-- проверка на администратора  --}}
+                    @if (Auth::check())
+                    @if (Auth::user()->roleName == 'Admin')
+                    <form class="adminButton" method="POST" action="{{ route('delete') }}">
+                        @csrf
+                        <button class= "adminButton-delPar adminButton " name="del_id" value="{{$his_item->id}}">Удалить работу</button>
+                    </form>
+                    @endif
+                    @endif
+                
+                  
                     @endforeach
 
 
@@ -123,3 +139,8 @@ BookOfBooks
 </body>
 
 </html>
+<script>
+
+    let a = 0
+    console.log(a)
+</script>

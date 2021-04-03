@@ -24,9 +24,18 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 @if (Auth::check())
+                @if (Auth::user()->roleName == 'Admin')
                 <li class="nav-item authCheck">
-                    <a class=""  style="color: #FF008A;" href="{{ route('dashboard') }}" tabindex="-1" aria-disabled="true">Профиль  <img src="{{ asset('img/user 1.png') }}" alt=""></a>
-                  </li>
+                  <a class=""  style="color: #FF008A;" href="{{ route('dashboard') }}" tabindex="-1" aria-disabled="true">Админ  <img src="{{ asset('img/admin.svg') }}" alt=""></a>
+                </li>
+              
+                @else
+                <li class="nav-item authCheck">
+                  <a class=""  style="color: #FF008A;" href="{{ route('dashboard') }}" tabindex="-1" aria-disabled="true">Профиль  <img src="{{ asset('img/user 1.png') }}" alt=""></a>
+                </li>
+               
+                @endif
+               
                
                 @else 
                 <li class="nav-item authCheck">

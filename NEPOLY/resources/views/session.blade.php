@@ -1,3 +1,6 @@
 @if (Session::has('info'))
-{{Session::get('info')}}
+<div class="alert alert-primary" role="alert">
+    {{Session::get('info')}}
+  </div>
+
 @endif

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\Genre;
 use App\Models\HistoryPar;
 use Illuminate\Http\Request;
 
@@ -16,8 +16,14 @@ class ProfileController extends Controller
     public function index()
     {
         //
+        if (Auth::user()->roleName == 'Admin') {
+            $genres = Genre::all();
+            return view('adminProfile.adminProfile', ['genre'=>$genres]);
+        }
         $his = HistoryPar::where('user_id', Auth::user()->id)->get();
         return view('profile.home', ['history'=>$his]);
+
+  
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminAccountController;
 use App\Http\Controllers\authorController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HistoryParController;
@@ -88,7 +89,7 @@ Route::post('deletePar', [HistoryParController::class, 'destroy'])->middleware([
 // удалить одну главу
 Route::post('deleteOnePar',[HistoryTextController::class, 'destroy'])->middleware(['auth'])->name('destroyOnePar');
 
-
-
-
+// АДМИН
+Route::post('deleteGenre', [AdminAccountController::class, 'destroy'])->middleware(['auth'])->name('deleteGenre');
+Route::post('addGenre', [AdminAccountController::class, 'store'])->middleware(['auth'])->name("addGenre");
 require __DIR__.'/auth.php';
