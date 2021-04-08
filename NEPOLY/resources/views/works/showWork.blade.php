@@ -55,12 +55,26 @@
 </div>
 
 <div class="row history_commentInp">
-
+    <div class="row">
+        <div class="col-md-12">
+            
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        </div>
+    </div>
     <form action="{{ route('addComment') }}" method="POST" class="col-md-12">
         @csrf
         <div class="row">
+        
             <div class="col-md-9  commentInp__input">
-                <h2>Комментарии</h2>
+                <h2 class='mb-2'>Комментарии</h2>
                 <input type="text" name="commentText" class='comment_input'>
             </div>
           

@@ -6,7 +6,10 @@
 
     margin-top: 34px;
 }
-
+.colorWidth {
+    height: 80%;
+    border-radius: 30px;
+}
 .adminText {
 
     border: 3px solid #C4C4C4;

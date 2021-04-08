@@ -87,6 +87,7 @@ class HistoryParController extends Controller
         //     'par_title' => 'required',
         //     'par_body' => 'required',
         // ]);
+        $upd->save();
 
         $request->session()->flash('info', 'История обновлена!');
         return redirect()->route('addPar', ['id'=> $request->his_id]);
@@ -112,15 +113,42 @@ class HistoryParController extends Controller
         // $delComment = HistoryPar::where('id', $request->del_id)->comments->get();
         // return $delComment;
         // // ПОЛНОЕ УДАЛЕНИЕ ИСТОРИИ
-        $commetn = Comment::where('post_id', $request->del_id);
-        $commetn->delete();
 
+
+
+      
+        $delTId = HistoryText::where('history_id', $request->del_id)->get();
+        
+  if (!empty($delTId[0])) {
+    $commentPar = CommentPar::where('history_parId', $delTId[0]->id);
+            $commentPar->delete();
+  }
+        
+        
+      
+     
+        // $commentPar = HistoryPar::all()->getCommentPar;
+        // return $commentPar;
+        // die;
+        // $commentPar->delete();
+      
+
+        $commetn = Comment::where('post_id', $request->del_id);
+        
+            $commetn->delete();
+       
+        
+    
         $delT = HistoryText::where('history_id', $request->del_id);
-        $delT->delete();
+       
+
+            $delT->delete();
+        
+        
 
         $del = HistoryPar::find($request->del_id);
         $del->delete();
-
+    
        
         // после удаления
         $request->session()->flash('info', 'История удалена!');

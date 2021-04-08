@@ -20,11 +20,11 @@
             <h1 class="text-center">Регистрация</h1>
             <form action="{{ route('regUser') }}" method="post">
                 @csrf
-                <input type="text" class="form-control  inputAll" name="login" placeholder="login">
-                <input type="text" class="form-control  inputAll" name="name" placeholder="name">
-            <input type="text" class="form-control inputAll" name="email" placeholder="email">
-            <input type="text" class="form-control inputAll" name="password" placeholder="password">
-            <input type="text" class="form-control inputAll" name="password_confirmation" placeholder="check_password">
+                <input type="text" class="form-control  inputAll" name="login" placeholder="Логин">
+                <input type="text" class="form-control  inputAll" name="name" placeholder="Имя">
+            <input type="text" class="form-control inputAll" name="email" placeholder="Емайл">
+            <input type="text" class="form-control inputAll" name="password" placeholder="Пароль">
+            <input type="text" class="form-control inputAll" name="password_confirmation" placeholder="Повтор пароля">
             <button class="buttonAll ">Зарегистрируйтесь</button>
             </form>
          <a href="{{ route('login') }}" class="authA text-center">Уже есть аккаунт? Войдите</a>

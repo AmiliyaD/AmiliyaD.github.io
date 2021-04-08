@@ -41,7 +41,7 @@ BookOfBooks
                
                         <div class="index__history_header ">
                             <div class="row">
-                                <div class="col-md-7">
+                                <div class="col-md-7 col-sm-12">
                                     {{-- h3 --}}
                                     <h3 class="d-inline "><a href="{{ route('showWork', ['id'=>$his_item->id]) }}" class="history_one__h3"> {{$his_item->title}}</a>
                                     </h3>
@@ -54,7 +54,7 @@ BookOfBooks
                                             <b>{{$his_item->comments()->where('post_id', $his_item->id)->count() + $his_item->getAllComments()->where('history_id', $his_item->id)->count()}}</b></div>
                                         <div class="img_comm d-inline"><img src="{{ asset('img/i1.png') }}" class=""
                                                 alt="">
-                                            <b>123</b></div>
+                                            <b>{{$his_item->likes}}</b></div>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
@@ -63,9 +63,12 @@ BookOfBooks
                                     @if (!empty($his_item->genresId->colorBack))
                                     <span id="{{$his_item->genresId->name}}"
                                         class=" float-right work_genre work_{{$his_item->genresId->name}}" style="background-color: {{$his_item->genresId->colorBack}}; border: none ">{{$his_item->genresId->name}}</span>
-                                    @endif
-                                    <span id="{{$his_item->genresId->name}}"
-                                        class=" float-right work_genre work_{{$his_item->genresId->name}}">{{$his_item->genresId->name}}</span>
+                                  
+                                  @else
+                                  <span id="{{$his_item->genresId->name}}"
+                                    class=" float-right work_genre work_{{$his_item->genresId->name}}">{{$his_item->genresId->name}}</span>
+                                        @endif
+                                 
                                 </div>
 
                             </div>
@@ -92,6 +95,7 @@ BookOfBooks
                     @if (Auth::user()->roleName == 'Admin')
                     <form class="adminButton" method="POST" action="{{ route('delete') }}">
                         @csrf
+                        
                         <button class= "adminButton-delPar adminButton " name="del_id" value="{{$his_item->id}}">Удалить работу</button>
                     </form>
                     @endif

@@ -39,12 +39,13 @@ Profile
             <input type="text" name="name" class='adminText pl-3' placeholder="Название жанра">
         </div>
         <div class="col-md-3">
+            
             <label for="">Цвет ярлыка</label>
-            <input type="color" name="colorBack" class='adminText' placeholder="Цвет ярлыка">
+            <input type="color" name="colorBack" class='adminText colorWidth' placeholder="Цвет ярлыка">
         </div>
         <div class="col-md-3">
             <label for="">Цвет надписи</label>
-            <input type="color" class='adminText' name="colorText"  placeholder="Цвет надписи">
+            <input type="color" class='adminText colorWidth' name="colorText"  placeholder="Цвет надписи">
         </div>
         <div class="col-md-4">
             <button class='adminButton adminButton-add'>Добавить новый жанр</button>
@@ -63,26 +64,29 @@ Profile
         
 
             <div class="col-md-3 del-genre_header ">
-                <div class="checkbox">
+                <div class="checkboxGenre">
                     <input type="checkbox" name="checkedGenres[]" class="adminCheck" value="{{$genreName->id}}">
                 </div>
-             
+             <div class="genreDel">
+
                 <div id="{{$genreName->name}}"
                     class=" float-right work_genre work_{{$genreName->name}} "  style="background-color: {{$genreName->colorBack}};
                      color: {{$genreName->colorText}}; border: none">{{$genreName->name}}</div>
               
             </div>
+             </div>
+               
         @else
 
-        <div class="col-md-3 del-genre_header ">
-            <div class="checkbox">
+        <div class="col-md-3 del-genre_header">
+            <div class="checkboxGenre">
                 <input type="checkbox" name="checkedGenres[]" class="adminCheck" value="{{$genreName->id}}">
             </div>
-         
+            <div class="genreDel">
             <div class="genreName work_genre work_{{$genreName->name}}">
                 {{$genreName->name}}
             </div>
-          
+        </div>
         </div>
         @endif
         @endforeach

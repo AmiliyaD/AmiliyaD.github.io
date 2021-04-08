@@ -54,7 +54,7 @@ Profile
                                         <b>{{$his_item->comments()->where('post_id', $his_item->id)->count() + + $his_item->getAllComments()->where('history_id', $his_item->id)->count()}}</b>
                                     </div>
                                     <div class="img_comm d-inline"><img src="{{ asset('img/i1.png') }}" class="" alt="">
-                                        <b>123</b></div>
+                                        <b>{{$his_item->likes}}</b></div>
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -108,6 +108,7 @@ Profile
                     <div class="editSum_del  mb-1">
                         {{-- УДАЛИТЬ ИСТОРИЮ --}}
                         <form action="{{ route('delete') }}" method="post">
+                            <input type="hidden" name="userId" value="{{Auth::user()->id}}">
                             @csrf <button>
                                 <input type="hidden" name="del_id" value="{{$his_item->id}}"> <img
                                     src="{{ asset('img/delete 1.png') }}" alt=""></button>

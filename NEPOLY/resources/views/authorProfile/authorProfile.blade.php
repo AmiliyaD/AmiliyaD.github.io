@@ -11,7 +11,7 @@ Author profile
     <div class="col-md-6 offset-md-3">
         <img src="{{ asset('img/ava.png') }}" alt="">
     </div>
-    <div class="col-md-6 offset-md-3">
+    <div class="col-md-6 offset-md-3 mt-5">
         <h1 class='text-center'>{{$user->name}}</h1>
     </div>
 </div>
@@ -37,7 +37,7 @@ Author profile
                         <h3 class="d-inline "><a href="{{ route('showWork', ['id'=>$his_item->id]) }}" class="history_one__h3"> {{$his_item->title}}</a>
                         </h3>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 mt-5">
                         {{-- текстовые иконы --}}
                         <div class="tIcons align-self-center">
                             <div class="img_like d-inline"><img src="{{ asset('img/i2.png') }}" alt="">
@@ -46,7 +46,7 @@ Author profile
                                 <b>{{$his_item->comments()->where('post_id', $his_item->id)->count() + $his_item->getAllComments()->where('history_id', $his_item->id)->count()}}</b></div>
                             <div class="img_comm d-inline"><img src="{{ asset('img/i1.png') }}" class=""
                                     alt="">
-                                <b>123</b></div>
+                                <b>{{$his_item->likes}}</b></div>
                         </div>
                     </div>
                     <div class="col-md-2">

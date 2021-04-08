@@ -43,13 +43,20 @@
                 </div>
                 {{-- row-2 --}}
                 @foreach ($genres as $item)
+                @if (!empty($item->colorBack))
+                <div class="col-lg-3 col-md-6 col-xs-6">
+                    <button name="genre" style="border: 1px solid {{$item->colorBack}}; color: {{$item->colorText}}"  value="{{$item->id}}" class="se-2 b {{$item->name}}">{{$item->name}}</button>
+                </div>
+                @else
                 <div class="col-lg-3 col-md-6 col-xs-6">
                     <button name="genre" value="{{$item->id}}" class="se-2 b {{$item->name}}">{{$item->name}}</button>
-                </div>
+                </div>  
+                @endif
+              
                 @endforeach
               
                 {{-- row-3 --}}
-               
+               <div class="w-100"></div>
                 {{-- row-4 --}}
                 <div class="col-lg-6 col-md-12">
                     <button class="se-3 b se-2-g">Сначала более популярные</button>
@@ -112,14 +119,21 @@
                                     <b>{{$his_item->comments()->where('post_id', $his_item->id)->count() + $his_item->getAllComments()->where('history_id', $his_item->id)->count()}}</b></div>
                                 <div class="img_comm d-inline"><img src="{{ asset('img/i1.png') }}" class=""
                                         alt="">
-                                    <b>123</b></div>
+                                    <b>{{$his_item->likes}}</b></div>
                             </div>
                         </div>
                         <div class="col-md-2">
 
-                            {{-- тег --}}
+                              {{-- тег --}}
+                              @if (!empty($his_item->genresId->colorBack))
+                              <span id="{{$his_item->genresId->name}}"
+                                  class=" float-right work_genre work_{{$his_item->genresId->name}}" style="background-color: {{$his_item->genresId->colorBack}}; border: none ">{{$his_item->genresId->name}}</span>
+                            
+                            @else
                             <span id="{{$his_item->genresId->name}}"
-                                class=" float-right work_genre work_{{$his_item->genresId->name}}">{{$his_item->genresId->name}}</span>
+                              class=" float-right work_genre work_{{$his_item->genresId->name}}">{{$his_item->genresId->name}}</span>
+                                  @endif
+                           
                         </div>
 
                     </div>

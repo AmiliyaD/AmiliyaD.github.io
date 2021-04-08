@@ -9,10 +9,25 @@ Profile
     @include('header')
     {{-- начало добавления --}}
     <div class="row">
+   
         <div class="col-8 offset-2">
             <img src="{{ asset('img/r.svg') }}" alt="" class="img-fluid text-center">
             <h1 class="text-center">Добавление работы</h1>
 {{-- форма для добавления работы --}}
+
+    <div class="col-md-12">
+        
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    </div>
+
             <form action="addwork" method="post">
                 @csrf
                 <div class="form-group">

@@ -57,7 +57,7 @@
                                     <b>{{$his_item->comments()->where('post_id', $his_item->id)->count() + $his_item->getAllComments()->where('history_id', $his_item->id)->count()}}</b></div>
                                 <div class="img_comm d-inline"><img src="{{ asset('img/i1.png') }}" class=""
                                         alt="">
-                                    <b>123</b></div>
+                                    <b>{{$his_item->likes}}</b></div>
                             </div>
                         </div>
                         <div class="col-md-2">
