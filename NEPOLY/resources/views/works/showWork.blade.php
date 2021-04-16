@@ -7,6 +7,17 @@
 @section('title')
     One story
 @endsection
+<?php 
+if (Auth::check()) {
+    $idUser = Auth::id();
+if (isset($_GET['userIdButton'])) {
+    $idUser = $_GET['userIdButton'];
+
+}
+
+}
+
+?>
 
 <div class="container">
     @include('header')
@@ -88,10 +99,7 @@
  
             <div class="col-md-3 ">
                 <div class="commentInt__buttons">
-                    <form action="">
-                        <button class=' buttons_like'>Нравится</button>
-
-                    </form>
+               
                     
                     <button class='par-btn buttons_send'>Отправить</button>
                 </div>
@@ -99,7 +107,25 @@
         </div>
         
     </form>
-    
+    <div class="col-md-3 ">
+        <div class="commentInt__buttons">
+            <form action="{{ route('getLike') }}" method="POST">
+                @if (Auth::check())
+                <input type="hidden" name="author" value="{{Auth::user()->name}}">
+                <input type="hidden" name="authId" value="{{Auth::id()}}">
+                
+                @endif
+                @if (isset($userIdButton))
+                    {{$userIdButton}}
+                @endif
+                <input type="hidden" name="historyId" value="{{$work->id}}">
+
+
+            </form>
+            <button value="{{$work->id}}" name="historyId" class='buttons_like'>Нравится {{$work->likes}}</button>
+  
+        </div>
+    </div>
 </div>
 {{-- comments --}}
 <div class="row history_comments">
@@ -133,3 +159,9 @@
 </div>
 
 @include('footer')
+
+<style>
+    .buttons_like {
+        cursor: pointer;
+    }
+</style>

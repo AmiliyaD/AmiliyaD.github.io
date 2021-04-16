@@ -16,11 +16,12 @@ class ProfileController extends Controller
     public function index()
     {
         //
+        $his = HistoryPar::where('user_id', Auth::user()->id)->get();
         if (Auth::user()->roleName == 'Admin') {
             $genres = Genre::all();
-            return view('adminProfile.adminProfile', ['genre'=>$genres]);
+            return view('adminProfile.adminProfile', ['genre'=>$genres, 'history'=>$his]);
         }
-        $his = HistoryPar::where('user_id', Auth::user()->id)->get();
+    
         return view('profile.home', ['history'=>$his]);
 
   

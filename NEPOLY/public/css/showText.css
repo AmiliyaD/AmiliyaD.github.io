@@ -146,6 +146,7 @@ color: #000000;
 }
 
 .commentInt__buttons button {
+    transition: 0.5s all;
     font-style: normal;
     font-weight: bold;
     font-size: 22px;
@@ -157,9 +158,22 @@ color: #000000;
     padding-right: 66px;
     margin-top: 30px;
 }
+.buttons_like:hover {
+    border: 1px solid #FF897D;
+    box-sizing: border-box;
+    border-radius: 50px;
+    background-color: #FF897D;
+    color: white;
 
+}
+
+.buttons_send:hover {
+    color: #FF008A;
+    background: white;
+    border: 1px solid #FF008A;
+}
 .buttons_like {
-
+    transition:  0.5s all;
     border: 1px solid #FF897D;
     box-sizing: border-box;
     border-radius: 50px;

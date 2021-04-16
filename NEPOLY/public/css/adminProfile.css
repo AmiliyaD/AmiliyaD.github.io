@@ -6,10 +6,12 @@
 
     margin-top: 34px;
 }
+
 .colorWidth {
     height: 80%;
     border-radius: 30px;
 }
+
 .adminText {
 
     border: 3px solid #C4C4C4;
@@ -76,5 +78,8 @@
 .adminCheck {
     border: 1px solid #C4C4C4;
     box-sizing: border-box;
+    width: 23px;
+    height: 23px;
     border-radius: 5px;
+    margin-right: 10px;
 }

@@ -59,10 +59,10 @@
                <div class="w-100"></div>
                 {{-- row-4 --}}
                 <div class="col-lg-6 col-md-12">
-                    <button class="se-3 b se-2-g">Сначала более популярные</button>
+                    <button name="popular" value="more" class="se-3 b se-2-g">Сначала более популярные</button>
               </div>
                 <div class="col-lg-6 col-md-12">
-                    <button class="se-3 b se-2-g">Сначала менее популярные</button>
+                    <button name="popular" value='less' class="se-3 b se-2-g">Сначала менее популярные</button>
                 </div>
                 {{-- row-5 --}}
                 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Genre;
+
 use App\Models\HistoryPar;
 class searchController extends Controller
 {
@@ -67,6 +68,17 @@ class searchController extends Controller
             return view('works.search', ['genres'=>$genres], ['searchResults'=> HistoryPar::where("status", "В процессе")->get()]);
 
          }
+        //  ПОИСК ПО ПОПУЛЯРНОСТИ
+        if ($request->popular == 'more') {
+            $search = HistoryPar::where('status', 'Завершен')->orderBy('likes', 'desc')->get();
+            
+            return view('works.search', ['genres'=>$genres], ['searchResults'=>$search]);
+        }
+        if ($request->popular == 'less') {
+            $search = HistoryPar::where('status', 'Завершен')->orderBy('likes', 'asc')->get();
+            
+            return view('works.search', ['genres'=>$genres], ['searchResults'=>$search]);
+        }
         //  ПОИСК ПО ДАТЕ
         if ($request->date_from) {
             $search = HistoryPar::where('created', '>', $request->date_from)->get();
