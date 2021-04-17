@@ -1,3 +1,4 @@
+
 {{-- ГЛАВНЫЙ ПРОФИЛЬ ПОЛЬЗОВАТЕЛЯ --}}
 @extends('styles')
 <link rel="stylesheet" href="{{ asset('css/showText.css') }}">
@@ -5,15 +6,38 @@
 @section('title')
 Profile
 @endsection
-
+<?php
+$user_avatar = Auth::user()->user_avatar;
+?> 
+{{Auth::user()->user_avatar}}
 <div class="container">
     @include('header')
     <div class="row justify-content-center">
 
         <div class="col-md-6 profile">
-            <img class="img-thumbnail" src="{{ asset('img/ava.png') }}" alt="">
-            <h1 class="text-center showText_Bg">{{Auth::user()->name}} {{Auth::user()->surname}}</h1>
+            <div class="imgBas ">
+               
+                @if (!empty(Auth::user()->user_avatar))
+                <img class="basicAva img-thumbnail" src="{{ asset('avatar/'.Auth::user()->user_avatar) }}" alt="">
+                @else
+                <img class="basicAva img-thumbnail" src="{{ asset('img/basicAva.png') }}" alt="">
+                @endif
+  
+        </div>
 
+            {{-- Изменить автарку пользователю --}}
+            @if (Session::has('ava'))
+            <div class="alert alert-primary" role="alert">
+                {{Session::get('ava')}}
+            </div>
+            @endif
+            <h1 class="text-center showText_Bg">{{Auth::user()->name}} {{Auth::user()->surname}}</h1>
+            <form enctype="multipart/form-data" action="{{ route('changeAvatar') }}" method="post">
+                @csrf
+                <input type="hidden" name="userID" value="{{Auth::user()->id}}">
+                <input type="file" name="userAvatar" id="">
+                <button>Изменить автарку</button>
+            </form>
         </div>
 
     </div>
@@ -40,9 +64,10 @@ Profile
                         <div class="row">
                             <div class="col-md-7">
                                 {{-- h3 --}}
-                 
 
-                                <h3 class="d-inline "><a href="{{ route('showWork', ['id'=>$his_item->id]) }}" class="history_one__h3"> {{$his_item->title}}</a>
+
+                                <h3 class="d-inline "><a href="{{ route('showWork', ['id'=>$his_item->id]) }}"
+                                        class="history_one__h3"> {{$his_item->title}}</a>
                                 </h3>
                             </div>
                             <div class="col-md-3">
@@ -65,13 +90,13 @@ Profile
                                     class=" float-right work_genre work_{{$his_item->genresId->name}} {{$his_item->genresId->colorText}}"
                                     style="background-color: {{$his_item->genresId->colorBack}}; color: {{$his_item->genresId->colorText}}; 
                                     border: none">{{$his_item->genresId->name}}</span>
-    
-    
+
+
                                 @else
                                 <span id="{{$his_item->genresId->name}}"
                                     class=" float-right work_genre work_{{$his_item->genresId->name}}">{{$his_item->genresId->name}}</span>
                                 @endif
-    
+
                             </div>
 
                         </div>
@@ -79,7 +104,7 @@ Profile
                     </div>
                     <div class="index__history_date">
                         <span class=" index__history_spanOne">{{$his_item->userId->name}}</span>
-                        <span class="index__history_spanTwo">{{$his_item->created}}</span> 
+                        <span class="index__history_spanTwo">{{$his_item->created}}</span>
                         @if ($his_item->status == 'В процессе')
                         <p class="in_progress_main float-right ">{{$his_item->status}}</p>
                         @else

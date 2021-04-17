@@ -63,6 +63,8 @@ Route::post('addCommentPar', [CommentController::class, 'storePar'])->middleware
 // ПРОФИЛЬ ПОЛЬЗОВАТЕЛЯ
 Route::get('/dashboard', [ProfileController::class,'index'])->middleware(['auth'])->name('dashboard');
 
+Route::post('/changeAvatar',[ProfileController::class, 'store'])->middleware(['auth'])->name('changeAvatar');
+
 //  3.1 ДОБАВИТЬ РАБОТУ
 // ОТКРЫТЬ ФОРМУ ДЛЯ ДОБАВЛЕНИЯ НОВОЙ ГЛАВЫ
 Route::get('addPar/{id}', [HistoryTextController::class, 'show'])->middleware(['auth'])->name('addPar');

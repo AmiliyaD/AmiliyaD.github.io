@@ -34,7 +34,12 @@
     <div class="row autors  marginBottom mt-5" >
         @foreach ($authors as $a)
         <div class="col-6 d-inline">
-          <a href="{{ route('authorProfile', ['userId'=>$a->id]) }}"><img src="{{ asset('img/av.png') }}" alt="" class="d-inline">
+          <a href="{{ route('authorProfile', ['userId'=>$a->id]) }}">
+            <?php if (!empty($a->user_avatar)): ?>
+            <img width="86px" height="86px" src="{{ asset('avatar/'.$a->user_avatar) }}" alt="" class="d-inline">
+            <?php else: ?>
+            <img src="{{ asset('img/av.png') }}" alt="" class="d-inline">
+            <?php endif; ?>
             <p>{{ $a->name }}</p></a>  
  
             </div>
