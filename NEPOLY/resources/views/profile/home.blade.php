@@ -18,7 +18,7 @@ $user_avatar = Auth::user()->user_avatar;
             <div class="imgBas ">
                
                 @if (!empty(Auth::user()->user_avatar))
-                <img class="basicAva img-thumbnail" src="{{ asset('avatar/'.Auth::user()->user_avatar) }}" alt="">
+                <img class="basicAva img-thumbnail"  style="border-radius: 100px;" src="{{ asset('avatar/'.Auth::user()->user_avatar) }}" alt="">
                 @else
                 <img class="basicAva img-thumbnail" src="{{ asset('img/basicAva.png') }}" alt="">
                 @endif

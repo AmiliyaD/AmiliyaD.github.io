@@ -9,7 +9,13 @@ Author profile
 @include('header')
 <div class="row showText_Bg">
     <div class="col-md-6 offset-md-3">
-        <img src="{{ asset('img/ava.png') }}" alt="">
+        
+        <?php if (!empty($user->user_avatar)): ?>
+        <img src="{{ asset('avatar/'.$user->user_avatar) }}" 
+        style="border-radius: 100px;" alt="" class="d-inline">
+        <?php else: ?>
+        <img src="{{ asset('img/av.png') }}" alt="" class="d-inline">
+        <?php endif; ?>
     </div>
     <div class="col-md-6 offset-md-3 mt-5">
         <h1 class='text-center'>{{$user->name}}</h1>

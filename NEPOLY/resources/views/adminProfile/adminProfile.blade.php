@@ -14,7 +14,7 @@ Profile
         <div class="col-md-6 profile">
          
             @if (!empty(Auth::user()->user_avatar))
-            <img class="basicAva img-thumbnail showText_Bg" src="{{ asset('avatar/'.Auth::user()->user_avatar) }}" alt="">
+            <img class="basicAva img-thumbnail showText_Bg"  style="border-radius: 100px;" src="{{ asset('avatar/'.Auth::user()->user_avatar) }}" alt="">
             @else
             <img class="basicAva img-thumbnail showText_Bg" src="{{ asset('img/basicAva.png') }}" alt="">
             @endif

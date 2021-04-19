@@ -12,15 +12,12 @@
             <a href="{{ route('index') }}" class=""><- Домой</a>
         </div>
         <div class="col-md-6 offset-md-3 formAll">
-            @if (Session::has('info'))
-<!-- Вы не зарегистрированы -->
-@else
- 
-@endif
+
             <div class="formAll_img">
                 <img class="img-thumbnail" src="{{ asset('img/key.png') }}" alt="">
             </div>
             <h1 class="formAll_header text-center">Вход</h1>
+            @include('session')
             <div class="formAll_form">
                 <form action="" method="post">
                     @csrf
