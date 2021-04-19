@@ -12,9 +12,25 @@ Profile
     <div class="row justify-content-center">
 
         <div class="col-md-6 profile">
-            <img class="img-thumbnail basicAvaAdmin" src="{{ asset('img/ava.png') }}" alt="">
+         
+            @if (!empty(Auth::user()->user_avatar))
+            <img class="basicAva img-thumbnail showText_Bg" src="{{ asset('avatar/'.Auth::user()->user_avatar) }}" alt="">
+            @else
+            <img class="basicAva img-thumbnail showText_Bg" src="{{ asset('img/basicAva.png') }}" alt="">
+            @endif
             <h1 class="text-center showText_Bg">{{Auth::user()->name}} {{Auth::user()->surname}}</h1>
-
+            
+            @if (Session::has('ava'))
+            <div class="alert alert-primary" role="alert">
+                {{Session::get('ava')}}
+            </div>
+            @endif
+            <form enctype="multipart/form-data" action="{{ route('changeAvatar') }}" method="post">
+                @csrf
+                <input type="hidden" name="userID" value="{{Auth::user()->id}}">
+                <input type="file" name="userAvatar" id="">
+                <button>Изменить автарку</button>
+            </form>
         </div>
 
     </div>
