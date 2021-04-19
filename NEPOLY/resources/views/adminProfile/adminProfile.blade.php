@@ -12,7 +12,7 @@ Profile
     <div class="row justify-content-center">
 
         <div class="col-md-6 profile">
-            <img class="img-thumbnail" src="{{ asset('img/adminProfile.png') }}" alt="">
+            <img class="img-thumbnail basicAvaAdmin" src="{{ asset('img/ava.png') }}" alt="">
             <h1 class="text-center showText_Bg">{{Auth::user()->name}} {{Auth::user()->surname}}</h1>
 
         </div>

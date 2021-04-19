@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Genre;
+use App\Models\User;
 use App\Models\HistoryPar;
 use Illuminate\Http\Request;
 
@@ -45,7 +46,17 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $user = User::find($request->userID);
+        $user->user_avatar = $_FILES['userAvatar']['name'];
+        $user->save();
+
+      $let =  move_uploaded_file($_FILES['userAvatar']['tmp_name'], 'avatar/'.$_FILES['userAvatar']['name']);
+      
+
+        $request->session()->flash('ava', 'Аватарка успешно обновлена!');
+        return redirect()->route('dashboard');
+      
     }
 
     /**

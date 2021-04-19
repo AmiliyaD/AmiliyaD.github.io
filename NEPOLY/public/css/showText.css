@@ -176,7 +176,12 @@ color: #000000;
 
 }
 
-
+.basicAva {
+    background-image: url('../img/avaBg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover
+}
 /* comment_text */
 .comments_text {
     margin-top: 50px;
