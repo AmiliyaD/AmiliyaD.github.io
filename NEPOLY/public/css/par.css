@@ -1,6 +1,12 @@
+
+
+/*
+(коркем)
 .row div:first-child {
     margin-top: 60px;
-}
+} */
+
+
 .all-input {
     width: 50%;
     height: 60.83px;
@@ -24,13 +30,12 @@
 }
 
 .par-btn {
-    width: 438px;
+    width: 270px;
 
-    padding: 20px;
+    padding: 10px 0;
     font-style: normal;
     font-weight: bold;
-    font-size: 22px;
-    line-height: 27px;
+    font-size: 20px;
     text-align: center;
     color: #FFFFFF;
     border: none;

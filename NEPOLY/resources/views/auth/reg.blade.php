@@ -21,11 +21,11 @@
             <form action="{{ route('regUser') }}" method="post">
                 @csrf
                 <!-- <input type="text" class="form-control  inputAll" name="login" placeholder="Логин"> -->
-            <input type="text" class="form-control  inputAll" name="name" placeholder="Имя">
-            <input type="text" class="form-control inputAll" name="email" placeholder="Email">
-            <input type="text" class="form-control inputAll" name="password" placeholder="Пароль">
-            <input type="text" class="form-control inputAll" name="password_confirmation" placeholder="Повтор пароля">
-            <button class="buttonAll ">Зарегистрируйтесь</button>
+                <input type="text" class="form-control  inputAll" name="name" placeholder="Имя">
+                <input type="text" class="form-control inputAll" name="email" placeholder="Email">
+                <input type="text" class="form-control inputAll" name="password" placeholder="Пароль">
+                <input type="text" class="form-control inputAll" name="password_confirmation" placeholder="Повтор пароля">
+                <button class="buttonAll ">Зарегистрируйтесь</button>
             </form>
          <a href="{{ route('login') }}" class="authA text-center">Уже есть аккаунт? Войдите</a>
             @if ($errors->any())
