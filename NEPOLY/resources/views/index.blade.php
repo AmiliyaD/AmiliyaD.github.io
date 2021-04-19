@@ -9,6 +9,10 @@ BookOfBooks
 @endsection
 
 <body>
+
+        <div class="leftImage"></div>
+        <div class="rightImage"></div>
+
     {{-- ГЛАВНАЯ --}}
     <div class="index-bg">
         <div class="container index-container ">
@@ -21,16 +25,16 @@ BookOfBooks
             <div class="row index__h1">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <h1>Подари свой мир!</h1>
-                    <p>Может, он кому-то понравится</p>
+                    <p>и может, он кому-то понравится</p>
                     <a href="{{ route('add') }}" class=""><button class='index__h1_button'>Добавить работу</button> </a>
                 </div>
-            </div>
+            </div> 
 
             {{-- ИСТОРИИ --}}
 
             <div class="row index__history">
                 <div class="col-md-12">
-                    <h3>Новинки</h3>
+                    <h3 class="index_history-title">Новинки</h3>
                 </div>
 
                 {{-- все истории --}}
@@ -139,12 +143,10 @@ BookOfBooks
 
     </div>
 
-
 </body>
 
 </html>
 <script>
-
     let a = 0
     console.log(a)
 </script>

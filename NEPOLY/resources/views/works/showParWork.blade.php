@@ -1,12 +1,12 @@
 <?php
-var_dump($historyPar->id);
+#var_dump($historyPar->id);
 function getId($getId)
 {
     $getId++;
     return $getId;
     # code...
 };
-echo getId($historyPar->id);
+#echo getId($historyPar->id);
 
 ?>
 
@@ -35,15 +35,14 @@ OneWork
     {{-- WORK TITLE --}}
     <div class="showParWork_text row">
         <div class="col-md-12">
-
             <p>{{$historyPar->history_text}}</p>
         </div>
     </div>
     <div class="showParWork__buttons showText_Bg row">
-        <div class="col-md-4 offset-md-4">
-            <a  class="text-center par-btn" href="{{ route('showWorkPar', ['par_id'=>getId($historyPar->id)]) }}">К следующей главе</a>
+        <div class="col-md-4 offset-md-4" style="text-align: center;">
+            <a  class="text-center par-btn" href="{{ route('showWorkPar', ['par_id'=>getId($historyPar->id)]) }}" style="margin-bottom: 15px;">К следующей главе</a>
             <div class="w-100"></div>
-            <a class="text-center border" href="">Назад к содержанию</a>
+            <a class="text-center border" href="" >Назад к содержанию</a>
         </div>
     </div>
     {{-- WORK COMMENTS --}}

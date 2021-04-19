@@ -4,16 +4,18 @@
 
 button {
     background: none;
-    border: none
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
 }
 
 body,
 img {
     border: none;
-}
-
-button {
-    outline: none;
 }
 
 ul {
@@ -57,6 +59,11 @@ a {
 
 }
 
+.navbar-brand {
+    font-weight: bold;
+    font-size: 16px;
+}
+
 .authCheck a {
     color: #FF008A;
 }
@@ -74,6 +81,15 @@ a {
 }
 
 /* INDEX H1 */
+
+/* .leftImage {
+    background: url('../img/левый\ задний\ серый\ пузырь.png') no-repeat;
+    background-size: 740px;
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+
 .allIndex {
     font-style: normal;
     font-weight: bold;
@@ -118,14 +134,12 @@ a {
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
-    line-height: 29px;
     margin-top: 62px;
     color: #FFFFFF;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    padding-left: 75px;
-    padding-right: 75px;
     border: none;
+
+    width: 370px;
+    padding: 25px 0;
 }
 
 .index__history_date span {
@@ -155,6 +169,12 @@ a {
 }
 
 /* INDEX HISTORY */
+
+
+.index_history-title {
+    text-decoration: none;
+}
+
 .index__history h3 {
     font-style: normal;
     font-weight: bold;
@@ -217,26 +237,25 @@ a {
     font-weight: bold;
     font-size: 24px;
     line-height: 29px;
-
     color: #000000;
+
+    margin-top: 25px;
 }
 
 .features__button {
-    margin-top: 117px;
+    margin-top: 110px;
     font-style: normal;
     font-weight: bold;
     font-size: 22px;
-    line-height: 27px;
 
     color: #FFFFFF;
 
     background: #FF008A;
     border-radius: 80px;
     border: none;
-    padding-top: 26px;
-    padding-bottom: 26px;
-    padding-left: 28px;
-    padding-right: 28px;
+
+    width: 370px;
+    padding: 30px 0;
 }
 
 /* FOOTER */
@@ -245,24 +264,19 @@ a {
 }
 
 .bg_grey_footer {
-    padding-top: 52px;
-    padding-bottom: 45px;
+    padding: 35px 0;
     background: #EEEEEE;
 }
 
 .bg_white_footer {
-    padding-top: 40px;
-    padding-bottom: 38px;
+    padding: 30px 0;
     background: #C8C8C8;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
-    line-height: 20px;
     /* identical to box height */
 
-
     color: #FFFFFF;
-
 }
 
 

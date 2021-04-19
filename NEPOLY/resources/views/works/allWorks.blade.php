@@ -22,7 +22,7 @@
                 <form action="{{ route('showSearch') }}" method="get">
                     <input type="text" name="name" id="" class="inc" placeholder="Введите название работы">
 
-                    <button class="btn btn-success">Найти</button>
+                    <button class="btn btn-success">Найти!</button>
                 </form>
 
 

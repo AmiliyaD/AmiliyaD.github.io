@@ -11,6 +11,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 *:focus {
@@ -38,6 +39,11 @@ input {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     color: #000;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
 }
 
 .textarea {
@@ -211,12 +217,12 @@ header {
 ----------------------------------------------*/
 
 .footer_nav {
-    padding: 52px 0;
+    padding: 35px 0;
     background-color: #EEEEEE;
 }
 
 .footer_credits {
-    padding: 39px 0;
+    padding: 30px 0;
     background-color: #C8C8C8;
     text-align: center;
     color: #fff;

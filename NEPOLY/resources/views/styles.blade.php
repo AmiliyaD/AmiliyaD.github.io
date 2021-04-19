@@ -10,6 +10,8 @@
     @yield('link')
     {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> --}}
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
    
     <title>@yield('title')</title>
 </head>

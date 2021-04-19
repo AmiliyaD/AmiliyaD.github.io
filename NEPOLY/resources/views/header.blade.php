@@ -9,7 +9,7 @@
           <div class="collapse navbar-collapse " id="navbarNav">
             <ul class="navbar-nav ">
               <li class="nav-item ml-5">
-                <a class=" active" aria-current="page" href="{{ route('add') }}">Добавить работу</a>
+                <a class="active" aria-current="page" href="{{ route('add') }}">Добавить работу</a>
               </li>
               <li class="nav-item">
                 <a class="" href="{{ route('show') }}">Все работы</a>

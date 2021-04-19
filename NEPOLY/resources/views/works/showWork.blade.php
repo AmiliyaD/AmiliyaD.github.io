@@ -27,7 +27,7 @@ if (isset($_GET['userIdButton'])) {
 <div class="col-md-12 h1">
 
     <h1 class="text-center history_titleH1">{{$work->title}}</h1>
-    <h3 class='text-center'>{{$work->userId->name}}</h3>
+    <h3 class='text-center' style="margin: 10px 0 30px;">{{$work->userId->name}}</h3>
 </div>
 <div class="col-md-12 history_titleDesc">
     <div class="titleDesc_bg">
@@ -54,7 +54,7 @@ if (isset($_GET['userIdButton'])) {
     <div class="col-md-6 history_paragrahps">
         <ul>
             @if ($work->historyText->count() == 0)
-            Но никто не пришел. (нету глав :с )
+            На данный момент работа не содержит глав.
         @endif
             @foreach ($work->historyText as $item)
            
@@ -98,9 +98,7 @@ if (isset($_GET['userIdButton'])) {
             <input type="hidden" name="historyId" value="{{$work->id}}">
  
             <div class="col-md-3 ">
-                <div class="commentInt__buttons">
-               
-                    
+                <div class="commentInt__buttons">             
                     <button class='par-btn buttons_send'>Отправить</button>
                 </div>
             </div>
@@ -122,7 +120,7 @@ if (isset($_GET['userIdButton'])) {
 
 
             </form>
-            <button value="{{$work->id}}" name="historyId" class='buttons_like'>Нравится {{$work->likes}}</button>
+            <button value="{{$work->id}}" name="historyId" class='buttons_like' style="margin-top: 15px;">Нравится {{$work->likes}}</button>
   
         </div>
     </div>

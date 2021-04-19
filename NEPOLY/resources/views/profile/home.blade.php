@@ -44,7 +44,7 @@ $user_avatar = Auth::user()->user_avatar;
     <div class="row">
         <div class="col-md-4 offset-md-4">
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class=" text-center">
-                <button class="logout-button work_genre text-center">Выйти</button>
+                <button class="logout-button work_genre text-center" style="margin: 10px auto">Выйти</button>
                 @csrf
             </form>
         </div>

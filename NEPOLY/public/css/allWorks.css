@@ -27,6 +27,9 @@
     background: #FF008A;
     border-radius: 50px;
     margin-top: 30px;
+
+    width: 100%;
+    font-weight: bold;
 }
 
 .r h2 {

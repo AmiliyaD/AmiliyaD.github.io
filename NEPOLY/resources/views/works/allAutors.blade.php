@@ -31,7 +31,7 @@
     {{-- header --}}
 
     {{-- autors --}}
-    <div class="row autors  marginBottom mt-5" >
+    <div class="row autors  marginBottom mt-5" style="text-align: center;">
         @foreach ($authors as $a)
         <div class="col-6 d-inline">
           <a href="{{ route('authorProfile', ['userId'=>$a->id]) }}">
