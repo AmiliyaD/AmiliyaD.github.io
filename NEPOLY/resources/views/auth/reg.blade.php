@@ -16,13 +16,13 @@
        <div class="col-md-6">
            <img class="img-thumbnail" src="{{ asset('img/door.png') }}" alt="">
        </div>
-        <div class="col-md-6">
+        <div class="col-md-6" style="text-align: center;">
             <h1 class="text-center">Регистрация</h1>
             <form action="{{ route('regUser') }}" method="post">
                 @csrf
-                <input type="text" class="form-control  inputAll" name="login" placeholder="Логин">
+                <!-- <input type="text" class="form-control  inputAll" name="login" placeholder="Логин"> -->
                 <input type="text" class="form-control  inputAll" name="name" placeholder="Имя">
-            <input type="text" class="form-control inputAll" name="email" placeholder="Емайл">
+            <input type="text" class="form-control inputAll" name="email" placeholder="Email">
             <input type="text" class="form-control inputAll" name="password" placeholder="Пароль">
             <input type="text" class="form-control inputAll" name="password_confirmation" placeholder="Повтор пароля">
             <button class="buttonAll ">Зарегистрируйтесь</button>

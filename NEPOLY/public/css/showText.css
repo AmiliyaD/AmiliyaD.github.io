@@ -8,7 +8,7 @@ img {
 }
 
 .showText_Bg {
-    margin-top: 100px;
+    margin-top: 70px;
     margin-bottom: 30px;
 }
 
@@ -43,10 +43,7 @@ img {
 
 .showText__text {
     margin-top: 50px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 20px;
 }
 
 .showText__pars {
@@ -150,13 +147,10 @@ color: #000000;
     font-style: normal;
     font-weight: bold;
     font-size: 22px;
-    line-height: 27px;
     text-align: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 66px;
-    padding-right: 66px;
-    margin-top: 30px;
+    
+    width: 270px;
+    padding: 10px 0;
 }
 .buttons_like:hover {
     border: 1px solid #FF897D;

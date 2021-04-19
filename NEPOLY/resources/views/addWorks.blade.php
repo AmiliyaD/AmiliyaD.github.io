@@ -28,7 +28,7 @@
             
                 <textarea class="works-text works" name="text" placeholder="Описание" id="text" rows="3"></textarea>
 
-                <button type='submit' class="works-button">Отправить</button>
+                <button type='submit' class="works-button">Готово!</button>
             
                 
             </div>

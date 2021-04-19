@@ -37,12 +37,6 @@ Edit work
 
         </div>
 
-
-
-
-
-
-
         {{-- ГЛАВЫ РАБОТЫ --}}
         <div class="row showText__pars">
             <div class="col-md-12">
@@ -52,12 +46,12 @@ Edit work
                 <ul>
 
                     @if ($par->historyText->count() == 0)
-                    Но никто не пришел. (нету глав :с )
+                    На данный момент работа не содержит глав.
                     @endif
 
                     @foreach ($par->historyText as $text)
 
-                    <li>{{$text->id}} <a href="{{ route('editPar', ['ed_id'=>$text->history_id]) }}">
+                    <li> <!--{{$text->id}}--> <a href="{{ route('editPar', ['ed_id'=>$text->history_id]) }}">
                             {{$text->history_title}} </a> </li>
                     @endforeach
 
@@ -67,8 +61,7 @@ Edit work
         <div class="row showText__buttons">
             <div class="col-md-5"><button class="allButtons">Сохранить изменения</button></div>
             <div class="col-md-5">
-                <button><a href="{{ route('addParT', ['id'=>$par->id]) }}" class="allButtons allButtons_a">Добавить новую
-                    главу</a></button>
+                <button><a href="{{ route('addParT', ['id'=>$par->id]) }}" class="allButtons allButtons_a">Добавить новую главу</a></button>
                 </div>
         </div>
     </form>

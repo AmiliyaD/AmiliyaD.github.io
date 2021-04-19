@@ -13,7 +13,7 @@
         </div>
         <div class="col-md-6 offset-md-3 formAll">
             @if (Session::has('info'))
-Вы не зарегстрированы
+<!-- Вы не зарегистрированы -->
 @else
  
 @endif
