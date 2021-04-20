@@ -8,17 +8,16 @@ Author profile
 <div class="container authorProfile">
 @include('header')
 <div class="row showText_Bg allHeadr">
-    <div class="col-md-6 offset-md-3">
+    <div class="col-md-6 offset-md-3" style="text-align: center;">
         
         <?php if (!empty($user->user_avatar)): ?>
-        <img width="550px" height="550px" src="{{ asset('avatar/'.$user->user_avatar) }}" 
-        style="border-radius: 100px;" alt="" class="d-inline">
+        <img width="550px" height="550px" src="{{ asset('avatar/'.$user->user_avatar) }}" alt="" class="d-inline avatarImage">
         <?php else: ?>
         <img src="{{ asset('img/ava.png') }}"  alt="" class="d-inline">
         <?php endif; ?>
     </div>
     <div class="col-md-6 offset-md-3 mt-5">
-        <h1 class='text-center'>{{$user->name}}</h1>
+        <h1 class='text-center' style="margin-bottom: 70px;">{{$user->name}}</h1>
     </div>
 </div>
 

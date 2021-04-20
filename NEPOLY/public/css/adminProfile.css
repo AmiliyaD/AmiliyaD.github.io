@@ -10,6 +10,8 @@
 .colorWidth {
     height: 80%;
     border-radius: 30px;
+    background: none;
+    border: none;
 }
 
 .adminText {
@@ -26,7 +28,17 @@
 
     padding-right: 38px;
     padding-top: 18px;
-    padding-bottom: 19px
+    padding-bottom: 19px;
+
+    width: 300px;
+}
+
+.tagManage {
+    border: none;
+    padding: 0;
+    height: 40px;
+    width: 250px;
+}
 }
 
 .adminButton {

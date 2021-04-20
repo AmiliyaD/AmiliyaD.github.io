@@ -31,7 +31,7 @@ Edit paragrah
 
             <input type="text" placeholder="Название" name='title' value="{{$edit->history_title}}" class="par-name par">
             <div class="w-100"></div>
-            <textarea id="" placeholder="Текст"  value="" cols="30" name="text" class="par-text par" rows="10">{{$edit->history_text}}</textarea>
+            <textarea id="" placeholder="Текст главы"  value="" cols="30" name="text" class="par-text par" rows="10">{{$edit->history_text}}</textarea>
             <div class="w-100"></div>
             <button type="submit" class="par-btn">Готово</button>
             <button type="submit" class="par-btn">Назад</button>

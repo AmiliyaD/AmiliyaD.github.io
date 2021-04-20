@@ -11,13 +11,13 @@ Profile
     @include('header')
     <div class="row justify-content-center">
 
-        <div class="col-md-6 profile">
+        <div class="col-md-6 profile" style="text-align: center; margin: 0;">
 
             @if (!empty(Auth::user()->user_avatar))
-            <img class="basicAva img-thumbnail showText_Bg" style="border-radius: 100px;"
+            <img class="basicAva showText_Bg avatarImage" style="margin: 50px auto 0;"
                 src="{{ asset('avatar/'.Auth::user()->user_avatar) }}" alt="">
             @else
-            <img class="basicAva img-thumbnail showText_Bg" src="{{ asset('img/ava.png') }}" alt="">
+            <img class="showText_Bg" src="{{ asset('img/adminProfile.png') }}" alt="">
             @endif
             <h1 class="text-center showText_Bg">{{Auth::user()->name}} {{Auth::user()->surname}}</h1>
 
@@ -29,8 +29,8 @@ Profile
             <form enctype="multipart/form-data" action="{{ route('changeAvatar') }}" method="post">
                 @csrf
                 <input type="hidden" name="userID" value="{{Auth::user()->id}}">
-                <input type="file" name="userAvatar" id="">
-                <button>Изменить автарку</button>
+                <input type="file" name="userAvatar" id=""  style="width: 300px;">
+                <button class="changeAvatar">Изменить аватарку</button>
             </form>
         </div>
 
@@ -38,7 +38,7 @@ Profile
     <div class="row">
         <div class="col-md-4 offset-md-4">
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class=" text-center">
-                <button class="logout-button work_genre text-center">Выйти</button>
+                <button class="logout-button work_genre text-center" style="margin: 0 auto;">Выйти</button>
                 @csrf
             </form>
         </div>
@@ -52,22 +52,28 @@ Profile
         </div>
 
         <div class="col-md-5">
-            <label for="">Название жанра</label>
+            <!-- <label for="">Название жанра</label> -->
             <input type="text" name="name" class='adminText pl-3' placeholder="Название жанра">
         </div>
         <div class="col-md-3">
 
             <label for="">Цвет ярлыка</label>
-            <input type="color" name="colorBack" class='adminText colorWidth' placeholder="Цвет ярлыка">
+            <input type="color" name="colorBack" class='adminText colorWidth tagmanage' placeholder="Цвет ярлыка">
         </div>
         <div class="col-md-3">
 
             <label for="">Цвет надписи</label>
 
-            <input type="color" class='adminText colorWidth' name="colorText" placeholder="Цвет надписи">
+            <input type="color" class='adminText colorWidth tagManage' name="colorText" placeholder="Цвет надписи">
         </div>
         <div class="col-md-4">
-            <button class='adminButton adminButton-add'>Добавить новый жанр</button>
+
+        <!-- Почему то у меня неправильно отображаются эти кнопки -->
+            <button class='adminButton adminButton-add' style="padding: 10px 0;
+            width: 300px;
+            border-radius: 50px;
+            color: white;
+            font-weight: bold;">Добавить новый жанр</button>
         </div>
     </form>
 
@@ -109,7 +115,11 @@ Profile
         @endforeach
 
         <div class="col-md-12 del-genre_footer genre-top genre-top-main">
-            <button value="" class='adminButton adminButton-del'>Удалить выбранные жанры</button>
+            <button value="" class='adminButton adminButton-del' style="padding: 10px 0;
+                width: 300px;
+                border-radius: 50px;
+                color: white;
+                font-weight: bold;">Удалить выбранные жанры</button>
         </div>
     </form>
 
