@@ -50,8 +50,8 @@ Edit work
                     @endif
 
                     @foreach ($par->historyText as $text)
-
-                    <li> <!--{{$text->id}}--> <a href="{{ route('editPar', ['ed_id'=>$text->history_id]) }}">
+                       
+                    <li> <!--{{$text->id}}--> <a href="{{ route('editPar', ['ed_id'=>$text->id]) }}">
                             {{$text->history_title}} </a> </li>
                     @endforeach
 
@@ -71,3 +71,14 @@ Edit work
 <div class="footer">
     @include('footer')
 </div>
+<style>
+    .showText_Bg {
+        margin-top: 60px;
+    }
+    .history_one__h3 {
+        margin-top: 70px;
+    }
+    .showText__buttons {
+        margin-top: 50px;
+    }
+</style>

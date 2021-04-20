@@ -12,14 +12,15 @@ Profile
     <div class="row justify-content-center">
 
         <div class="col-md-6 profile">
-         
+
             @if (!empty(Auth::user()->user_avatar))
-            <img class="basicAva img-thumbnail showText_Bg" style="border-radius: 100px;" src="{{ asset('avatar/'.Auth::user()->user_avatar) }}" alt="">
+            <img class="basicAva img-thumbnail showText_Bg" style="border-radius: 100px;"
+                src="{{ asset('avatar/'.Auth::user()->user_avatar) }}" alt="">
             @else
-            <img class="basicAva img-thumbnail showText_Bg"  src="{{ asset('img/ava.png') }}" alt="">
+            <img class="basicAva img-thumbnail showText_Bg" src="{{ asset('img/ava.png') }}" alt="">
             @endif
             <h1 class="text-center showText_Bg">{{Auth::user()->name}} {{Auth::user()->surname}}</h1>
-            
+
             @if (Session::has('ava'))
             <div class="alert alert-primary" role="alert">
                 {{Session::get('ava')}}
@@ -42,28 +43,28 @@ Profile
             </form>
         </div>
     </div>
-@include('session')
+    @include('session')
     {{-- Жанры для добавления --}}
     <form class="adminGenres row form-class" action="{{ route('addGenre') }}" method="POST">
         @csrf
         <div class="col-md-12">
             <h1>Жанры</h1>
         </div>
-      
+
         <div class="col-md-5">
             <label for="">Название жанра</label>
             <input type="text" name="name" class='adminText pl-3' placeholder="Название жанра">
         </div>
         <div class="col-md-3">
-            
+
             <label for="">Цвет ярлыка</label>
             <input type="color" name="colorBack" class='adminText colorWidth' placeholder="Цвет ярлыка">
         </div>
         <div class="col-md-3">
 
             <label for="">Цвет надписи</label>
-            
-            <input type="color" class='adminText colorWidth' name="colorText"  placeholder="Цвет надписи">
+
+            <input type="color" class='adminText colorWidth' name="colorText" placeholder="Цвет надписи">
         </div>
         <div class="col-md-4">
             <button class='adminButton adminButton-add'>Добавить новый жанр</button>
@@ -71,44 +72,43 @@ Profile
     </form>
 
 
-{{-- Жанры для удаления --}}
-    <form class="row del-genre" method="POST" action="{{ route('deleteGenre') }}">
-     @csrf
+    {{-- Жанры для удаления --}}
+    <form class="row del-genre genre-top-main" method="POST" action="{{ route('deleteGenre') }}">
+        @csrf
         @foreach ($genre as $genreName)
-   
- 
+
+
 
         @if (!empty($genreName->colorBack))
-        
 
-            <div class="d-flex flex-row col-md-3 del-genre_header ">
- 
-                    <input type="checkbox" name="checkedGenres[]" class="adminCheck" value="{{$genreName->id}}">
-                
-            
-                <div id="{{$genreName->name}}"
-                    class=" float-right work_genre work_{{$genreName->name}} "  style="background-color: {{$genreName->colorBack}};
+
+        <div class="d-flex flex-row col-md-3 col-sm-12 del-genre_header  genre-top genre-top-main">
+
+            <input type="checkbox" name="checkedGenres[]" class="adminCheck" value="{{$genreName->id}}">
+
+
+            <div id="{{$genreName->name}}" class=" float-right work_genre work_{{$genreName->name}} " style="background-color: {{$genreName->colorBack}};
                      color: {{$genreName->colorText}}; border: none">{{$genreName->name}}</div>
-              
-           
-             </div>
-               
+
+
+        </div>
+
         @else
 
-        <div class="col-md-3 d-flex flex-row del-genre_header">
+        <div class="col-md-3  col-sm-6 d-flex flex-row del-genre_header genre-top genre-top-main">
             <div class="checkboxGenre align-self-center">
                 <input type="checkbox" name="checkedGenres[]" class="adminCheck" value="{{$genreName->id}}">
             </div>
             <div class="genreDel">
-            <div class="genreName work_genre work_{{$genreName->name}}">
-                {{$genreName->name}}
+                <div class="genreName work_genre work_{{$genreName->name}}">
+                    {{$genreName->name}}
+                </div>
             </div>
-        </div>
         </div>
         @endif
         @endforeach
-   
-        <div class="col-md-12 del-genre_footer">
+
+        <div class="col-md-12 del-genre_footer genre-top genre-top-main">
             <button value="" class='adminButton adminButton-del'>Удалить выбранные жанры</button>
         </div>
     </form>
@@ -120,7 +120,7 @@ Profile
 
         <h2>Все работы</h2>
         <div class="row">
-        
+
             @foreach ($history as $his_item)
             <div class="col-md-11 ">
 
@@ -131,9 +131,10 @@ Profile
                         <div class="row">
                             <div class="col-md-7">
                                 {{-- h3 --}}
-                 
 
-                                <h3 class="d-inline "><a href="{{ route('showWork', ['id'=>$his_item->id]) }}" class="history_one__h3"> {{$his_item->title}}</a>
+
+                                <h3 class="d-inline "><a href="{{ route('showWork', ['id'=>$his_item->id]) }}"
+                                        class="history_one__h3"> {{$his_item->title}}</a>
                                 </h3>
                             </div>
                             <div class="col-md-3">
@@ -156,8 +157,8 @@ Profile
                                     class=" float-right work_genre work_{{$his_item->genresId->name}} {{$his_item->genresId->colorText}}"
                                     style="background-color: {{$his_item->genresId->colorBack}}; color: {{$his_item->genresId->colorText}}; 
                                     border: none">{{$his_item->genresId->name}}</span>
-    
-    
+
+
                                 @else
                                 <span id="{{$his_item->genresId->name}}"
                                     class=" float-right work_genre work_{{$his_item->genresId->name}}">{{$his_item->genresId->name}}</span>
@@ -223,3 +224,14 @@ Profile
 
 </div>
 @include('footer')
+
+<style>
+    .genre-top-main {
+        margin-top: 25px
+    }
+
+    /* .genre-top {
+        margin-top: 25px;
+    } */
+
+</style>

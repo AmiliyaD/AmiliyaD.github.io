@@ -5,6 +5,8 @@
 @section('title')
 Edit paragrah
 @endsection
+
+
 <div class="container editPar">
     @include('header')
     <div class="row editPar_row showText_Bg">
@@ -35,7 +37,13 @@ Edit paragrah
             <button type="submit" class="par-btn">Назад</button>
         </form>
 
+        <form method="POST" action="{{ route('destroyOnePar') }}" class="col-md-2 editPar__title" action="">
+            @csrf
+            <input type="hidden" name="history" id="" value="{{$edit->history_id}}">
+            <input type="hidden" name="his_id" id="" value="{{$edit->id}}">
+            <button class="allButtons showText__buttons par-btn">Удалить главу</button>
 
+        </form>
 
         {{-- <form class="col-md-12 editPar__title" action="{{ route('updatePar') }}" method="POST">
             @csrf
@@ -65,7 +73,6 @@ Edit paragrah
     </div>
 </div>
 </div>
-
 <div class="footer">
     @include('footer')
 </div>

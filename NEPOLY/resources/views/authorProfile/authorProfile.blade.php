@@ -7,7 +7,7 @@ Author profile
 @endsection
 <div class="container authorProfile">
 @include('header')
-<div class="row showText_Bg">
+<div class="row showText_Bg allHeadr">
     <div class="col-md-6 offset-md-3">
         
         <?php if (!empty($user->user_avatar)): ?>
@@ -91,3 +91,9 @@ Author profile
 </div>
 
 @include('footer')
+
+<style>
+    .allHeadr {
+        margin-top: 160px;
+    }
+</style>

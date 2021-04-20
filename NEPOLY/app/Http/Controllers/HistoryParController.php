@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Comment;
 use App\Models\CommentPar;
 use App\Models\Genre;
+use Illuminate\Support\Facades\DB;
 
 class HistoryParController extends Controller
 {
@@ -32,7 +33,29 @@ class HistoryParController extends Controller
      */
     public function create(Request $request, $par_id)
     {
-        return view('works.showParWork', ['historyPar'=> HistoryText::find($par_id), 'comments'=> CommentPar::where('history_parid', $par_id)->get()] );
+        // ИЩЕМ ПОСЛЕДНИЙ ДОБАВЛЕННЫЙ id
+        $historyText = HistoryText::find($par_id);
+        $id = HistoryText::where('history_id', $historyText->history_id )->get('id');
+
+        $lastInsertId = $id[count($id)-1]->id;
+
+        // проверка на последнюю главу
+        if ($lastInsertId != $historyText->id) {
+            return view('works.showParWork',
+            ['historyPar'=> HistoryText::find($par_id), 
+           'comments'=> CommentPar::where('history_parid', $par_id)->get()] );
+        }
+        else if ($lastInsertId == $historyText->id);
+        {
+            return view('works.showParWork',
+            ['historyPar'=> HistoryText::find($par_id), 
+           'comments'=> CommentPar::where('history_parid', $par_id)->get(), 'endChapter' => 'thisIsEnd'] );
+        }
+       
+        
+        // вывод данных на страницу
+
+        
     }
 
     /**

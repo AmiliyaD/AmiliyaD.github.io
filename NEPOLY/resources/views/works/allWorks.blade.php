@@ -13,7 +13,7 @@
 <div class="container">
     @include('header')
     <div class="row allHeadr  align-middle">
-        <div class="col-6">
+        <div class="col-md-6">
             <img src="{{ asset('img/s.png') }}" class="img-fluid" alt="">
         </div>
         <div class="col-md-5 col-sm-12 col-12 align-baseline ">
@@ -121,3 +121,10 @@
     </div>
 </div>
 @include('footer')
+
+<style>
+.allHeadr {
+    margin-top: 160px;
+}
+
+</style>

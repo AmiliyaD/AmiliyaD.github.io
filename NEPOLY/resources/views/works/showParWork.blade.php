@@ -38,13 +38,30 @@ OneWork
             <p>{{$historyPar->history_text}}</p>
         </div>
     </div>
+    {{-- ВЫВОДИМ КОНЕЦ ГЛАВЫ --}}
     <div class="showParWork__buttons showText_Bg row">
-        <div class="col-md-4 offset-md-4" style="text-align: center;">
-            <a  class="text-center par-btn" href="{{ route('showWorkPar', ['par_id'=>getId($historyPar->id)]) }}" style="margin-bottom: 15px;">К следующей главе</a>
+        <div class="col-md-4 offset-md-4 showText_buttonsTop" style="text-align: center;">
+            @if (!isset($endChapter))
+            <a class="text-center par-btn" href="{{ route('showWorkPar', ['par_id'=>getId($historyPar->id)]) }}"
+                style="margin-bottom: 15px;">К следующей главе</a>
+            @else
+            На этом история закончилась!
+            @endif
+
+
             <div class="w-100"></div>
-            <a class="text-center border" href="" >Назад к содержанию</a>
+            <a class="text-center " href="{{ route('showWork', ['id'=>$historyPar->history_id]) }}">Назад к
+                содержанию</a>
+
         </div>
     </div>
+
+
+
+
+
+
+
     {{-- WORK COMMENTS --}}
     <div class="row history_comments">
         <form action="{{ route('addCommentPar') }}" method="POST" class="col-md-12">
@@ -54,50 +71,70 @@ OneWork
                     <h2>Комментарии</h2>
                     <input type="text" name="commentText" class='comment_input'>
                 </div>
-              
+
                 @if (Auth::check())
                 <input type="hidden" name="author" value="{{Auth::user()->name}}">
                 <input type="hidden" name="authId" value="{{Auth::id()}}">
-                
+
                 @endif
-             
+
                 <input type="hidden" name="historyId" value="{{$historyPar->id}}">
-     
+
                 <div class="col-md-3 ">
                     <div class="commentInt__buttons">
-                        
+
                         <button class='par-btn buttons_send'>Отправить</button>
                     </div>
                 </div>
             </div>
-            
+
         </form>
+
+
+
+
+
         {{-- COMMENT INPUT --}}
         @include('session')
-       @foreach ($comments as $item)
-       <div class="col-md-12 comments_text obertka">
+        @foreach ($comments as $item)
+        <div class="col-md-12 comments_text obertka">
 
 
-        <div class="comment_text_inn">
-            <div class="row">
+            <div class="comment_text_inn">
+                <div class="row">
 
-                <div class="col-md-2">
-          <b>   {{$item->commentAuthor}}</b>
+                    <div class="col-md-2">
+                        <b> {{$item->commentAuthor}}</b>
+                    </div>
+                    <div class="col-md-8">
+                        {{$item->commentText}}
+
+
+                    </div>
                 </div>
-                <div class="col-md-8">
-                    {{$item->commentText}}
 
-
-                </div>
             </div>
 
         </div>
-
-    </div>
-       @endforeach
+        @endforeach
 
 
     </div>
- 
+
 </div>
 @include('footer')
+
+<style>
+    .showText_Bg {
+        margin-top: 100px;
+    }
+
+    .showText_buttonsTop {
+        margin-top: 100px;
+    }
+
+    .history_comments {
+        margin-top: 200px;
+    }
+
+</style>

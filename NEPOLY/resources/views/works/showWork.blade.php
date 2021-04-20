@@ -136,7 +136,7 @@ if (isset($_GET['userIdButton'])) {
         <div class="comment_text_inn">
             <div class="row">
 
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <b> {{$item->commentAuthor}}</b>
                 </div>
                 <div class="col-md-8">

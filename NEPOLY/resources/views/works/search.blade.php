@@ -166,3 +166,10 @@
 </div>
 
 @include('footer')
+
+<style>
+
+    .searchRes{
+        margin-top: 100px;
+    }
+</style>

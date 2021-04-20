@@ -101,9 +101,15 @@ class HistoryTextController extends Controller
      */
     public function openPar( $ed_id)
     {
-        return view('profile.editPar', ['edit'=>HistoryText::where('history_id', $ed_id)->first()]);
+        $history = HistoryText::where('id', $ed_id)->first();
+
+        return view('profile.editPar', ['edit'=> $history]);
         # code...
     }
+
+
+
+    
     public function update(Request $request, HistoryText $historyText)
     {
         //
