@@ -44,6 +44,8 @@ img {
 .showText__text {
     margin-top: 50px;
     padding: 20px;
+    padding-bottom: 150px;
+    padding-left: 50px;
 }
 
 .showText__pars {
@@ -181,6 +183,12 @@ color: #000000;
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover
+}
+.changeAva {
+    color: currentColor;
+    border: 1px solid;
+    border-radius: 30px;
+    margin-top: 15px;
 }
 /* comment_text */
 .comments_text {

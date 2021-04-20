@@ -9,7 +9,6 @@ Profile
 <?php
 $user_avatar = Auth::user()->user_avatar;
 ?> 
-{{Auth::user()->user_avatar}}
 <div class="container">
     @include('header')
     <div class="row justify-content-center">
@@ -18,9 +17,9 @@ $user_avatar = Auth::user()->user_avatar;
             <div class="imgBas ">
                
                 @if (!empty(Auth::user()->user_avatar))
-                <img class="basicAva img-thumbnail"  style="border-radius: 100px;" src="{{ asset('avatar/'.Auth::user()->user_avatar) }}" alt="">
+                <img class="img-thumbnail"  style="border-radius: 100px;" src="{{ asset('avatar/'.Auth::user()->user_avatar) }}" alt="">
                 @else
-                <img class="basicAva img-thumbnail" src="{{ asset('img/basicAva.png') }}" alt="">
+                <img class="basicAva img-thumbnail" src="{{ asset('img/ava.png') }}" alt="">
                 @endif
   
         </div>
@@ -32,14 +31,17 @@ $user_avatar = Auth::user()->user_avatar;
             </div>
             @endif
             <h1 class="text-center showText_Bg">{{Auth::user()->name}} {{Auth::user()->surname}}</h1>
+       
+        </div>
+
+        <div class="col-md-7 offset-md-3">
             <form enctype="multipart/form-data" action="{{ route('changeAvatar') }}" method="post">
                 @csrf
                 <input type="hidden" name="userID" value="{{Auth::user()->id}}">
                 <input type="file" name="userAvatar" id="">
-                <button>Изменить автарку</button>
+                <button class='changeAva'>Изменить автарку</button>
             </form>
         </div>
-
     </div>
     <div class="row">
         <div class="col-md-4 offset-md-4">
