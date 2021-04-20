@@ -9,8 +9,7 @@
 
 .colorWidth {
     height: 80%;
-    background: none;
-    border: none;
+    border-radius: 30px;
 }
 
 .adminText {
@@ -61,8 +60,6 @@
     border-radius: 50px;
     padding-right: 15px;
     padding-left: 15px;
-
-    width: 300px;
 }
 
 /* DEL - GENRE */

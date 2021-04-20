@@ -8,6 +8,7 @@ img {
 }
 
 .showText_Bg {
+    margin-top: 70px;
     margin-bottom: 30px;
 }
 
@@ -71,7 +72,7 @@ img {
 }
 
 .showText__buttons {
-    margin-top: 30px;
+    margin-top: 77px;
 }
 
 .showText__buttons button {
@@ -175,12 +176,12 @@ color: #000000;
 
 }
 
-/* .basicAva {
+.basicAva {
     background-image: url('../img/avaBg.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover
-} */
+}
 /* comment_text */
 .comments_text {
     margin-top: 50px;
@@ -200,29 +201,4 @@ color: #000000;
 .editPar__title textarea,
 input {
     width: 100%;
-}
-
-/* Кнопка Изменить аватар*/
-.changeAvatar {
-    width: 300px;
-    background: #ff008a;
-    color: white;
-    font-weight: bold;
-    padding: 10px 0;
-    margin: 10px 0;
-    border-radius: 50px;
-    transition: .1s linear background;
-}
-
-.changeAvatar:hover {
-    background: #ff52ae;
-}
-
-.avatarImage {
-    border-radius: 500px;
-    width: 400px;
-    height: 400px;
-    box-shadow: 0 0 30px rgb(0 0 0 / 15%);
-    margin: 90px 0 30px;
-    padding: 0; 
 }

@@ -30,12 +30,6 @@
 
     width: 100%;
     font-weight: bold;
-
-    transition: .1s linear background;
-}
-
-.r button:hover {
-    background: #ff52ae; 
 }
 
 .r h2 {

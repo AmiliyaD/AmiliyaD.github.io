@@ -11,14 +11,12 @@ Profile
     @include('header')
     <div class="row justify-content-center">
 
-        <div class="col-md-6 profile" style="text-align: center; margin: 0;">
+        <div class="col-md-6 profile">
          
             @if (!empty(Auth::user()->user_avatar))
-            <img 
-                class="basicAva  showText_Bg avatarImage"  
-                src="{{ asset('avatar/'.Auth::user()->user_avatar) }}" alt="">
+            <img class="basicAva img-thumbnail showText_Bg"  style="border-radius: 100px;" src="{{ asset('avatar/'.Auth::user()->user_avatar) }}" alt="">
             @else
-            <img class="basicAva img-thumbnail showText_Bg" src="{{ asset('img/ava.png') }}" alt="" style="margin: 90px 0 30px; padding: 0;">
+            <img class="basicAva img-thumbnail showText_Bg" src="{{ asset('img/basicAva.png') }}" alt="">
             @endif
             <h1 class="text-center showText_Bg">{{Auth::user()->name}} {{Auth::user()->surname}}</h1>
             
@@ -30,8 +28,8 @@ Profile
             <form enctype="multipart/form-data" action="{{ route('changeAvatar') }}" method="post">
                 @csrf
                 <input type="hidden" name="userID" value="{{Auth::user()->id}}">
-                <input type="file" name="userAvatar" id="" style="width: 300px;">
-                <button class="changeAvatar">Изменить автарку</button>
+                <input type="file" name="userAvatar" id="">
+                <button>Изменить автарку</button>
             </form>
         </div>
 
@@ -39,7 +37,7 @@ Profile
     <div class="row">
         <div class="col-md-4 offset-md-4">
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class=" text-center">
-                <button class="logout-button work_genre text-center" style="margin: 0 auto;">Выйти</button>
+                <button class="logout-button work_genre text-center">Выйти</button>
                 @csrf
             </form>
         </div>

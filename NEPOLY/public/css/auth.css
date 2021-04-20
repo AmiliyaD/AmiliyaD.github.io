@@ -15,21 +15,21 @@ a {
 .inputAll {
     width: 100%;
     border: 3px solid #C4C4C4;
-    box-sizing: border-box;
-    border-radius: 40px;
-    margin-top: 22px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+box-sizing: border-box;
+border-radius: 40px;
+margin-top: 22px;
+padding-top: 20px;
+padding-bottom: 20px;
 }
 .buttonAll {
     margin-top: 20px;
-    border: none;
-    width: 100%;
-    background: #FF008A;
-    border-radius: 40px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    color: white;
+border: none;
+width: 100%;
+background: #FF008A;
+border-radius: 40px;
+padding-top: 15px;
+padding-bottom: 15px;
+color: white;
 }
 
 .formAll_form {
@@ -37,8 +37,8 @@ a {
 }
 
 .authA {
-    font-size: 16px;
-    line-height: 29px;
+font-size: 16px;
+line-height: 29px;
 }
 
 .reg {

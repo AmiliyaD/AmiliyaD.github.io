@@ -26,7 +26,7 @@ OneWork
     <div class="showParWork_header showText_Bg row">
         <div class="col-md-6 offset-md-3">
 
-            <h1 class="text-center" style="margin: 90px 0 20px;">{{$historyPar->historyPar->title}}</h1>
+            <h1 class="text-center">{{$historyPar->historyPar->title}}</h1>
         </div>
         <div class="col-md-4 offset-md-4">
             <h2 class="text-center">{{$historyPar->history_title}}</h2>
@@ -40,9 +40,9 @@ OneWork
     </div>
     <div class="showParWork__buttons showText_Bg row">
         <div class="col-md-4 offset-md-4" style="text-align: center;">
-            <a  class="text-center par-btn" href="{{ route('showWorkPar', ['par_id'=>getId($historyPar->id)]) }}" style="margin: 30px 0 15px; text-decoration: none;">К следующей главе</a>
+            <a  class="text-center par-btn" href="{{ route('showWorkPar', ['par_id'=>getId($historyPar->id)]) }}" style="margin-bottom: 15px;">К следующей главе</a>
             <div class="w-100"></div>
-            <a class="text-center border" href="">Назад к содержанию</a>
+            <a class="text-center border" href="" >Назад к содержанию</a>
         </div>
     </div>
     {{-- WORK COMMENTS --}}
@@ -63,8 +63,9 @@ OneWork
              
                 <input type="hidden" name="historyId" value="{{$historyPar->id}}">
      
-                <div class="col-md-3" style="align-self: flex-end;">
-                    <div class="commentInt__buttons">                      
+                <div class="col-md-3 ">
+                    <div class="commentInt__buttons">
+                        
                         <button class='par-btn buttons_send'>Отправить</button>
                     </div>
                 </div>

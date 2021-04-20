@@ -125,9 +125,6 @@ a {
     line-height: 29px;
 
     color: #FFFFFF;
-
-    width: 270px;
-    padding: 10px 0;
 }
 
 .index__h1_button {
@@ -143,15 +140,7 @@ a {
 
     width: 370px;
     padding: 25px 0;
-
-    transition: .1s linear background;
 }
-
-.index__h1_button:hover {
-    background: #ff52ae;   
-}
-
-
 
 .index__history_date span {
     font-style: normal;
@@ -240,10 +229,7 @@ a {
 
 /* FEATURES */
 .index__features {
-
-    /* (коркем)
-    margin-top: 188px; */
-    margin-top: 150px;
+    margin-top: 188px;
 }
 
 .features__col_Main p {
@@ -270,11 +256,6 @@ a {
 
     width: 370px;
     padding: 30px 0;
-    transition: .1s linear background;
-}
-
-.features__button:hover {
-    background: #ff52ae; 
 }
 
 /* FOOTER */
@@ -302,7 +283,7 @@ a {
 
 /* PROFILE  */
 .profile {
-    margin-top: 90px;
+    margin-top: 128px
 }
 
 .profile_allWork {
