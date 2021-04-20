@@ -79,14 +79,15 @@ class HistoryParController extends Controller
     public function update(Request $request, HistoryPar $historyPar)
     {
         //
+
         $upd = HistoryPar::find($request->his_id);
         $upd->title = $request->par_title;
 
         $upd->text = $request->par_body;
-        // $request->validate([
-        //     'par_title' => 'required',
-        //     'par_body' => 'required',
-        // ]);
+        $request->validate([
+            'par_title' => 'required',
+            'par_body' => 'required',
+        ]);
         $upd->save();
 
         $request->session()->flash('info', 'История обновлена!');

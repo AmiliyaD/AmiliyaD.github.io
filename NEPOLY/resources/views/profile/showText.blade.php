@@ -11,7 +11,7 @@ Edit work
     {{-- ВЕРХНЯЯ ЧАСТЬ --}}
     <div class="row showText_Bg">
         <div class="col-md-6 offset-md-3">
-            <img src="{{ asset('img/red.png') }}" alt="">
+            <img src="{{ asset('img/red.png') }}" class="img-thumbnail" alt="">
         </div>
         <div class="col-md-8 showText_h3 offset-md-2">
             <h3 class="text-center allIndex">Редактирование работы</h3>
@@ -59,8 +59,8 @@ Edit work
             </div>
         </div>
         <div class="row showText__buttons">
-            <div class="col-md-5"><button class="allButtons">Сохранить изменения</button></div>
-            <div class="col-md-5">
+            <div class="col-md-5 col-sm-12"><button class="allButtons">Сохранить изменения</button></div>
+            <div class="col-md-6 col-sm-12">
                 <button><a href="{{ route('addParT', ['id'=>$par->id]) }}" class="allButtons allButtons_a">Добавить новую главу</a></button>
                 </div>
         </div>
