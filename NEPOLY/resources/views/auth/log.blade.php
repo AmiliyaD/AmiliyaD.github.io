@@ -17,7 +17,7 @@
                 <img class="img-thumbnail" src="{{ asset('img/key.png') }}" alt="">
             </div>
             <h1 class="formAll_header text-center">Вход</h1>
-            @include('session')
+         
             <div class="formAll_form">
                 <form action="" method="post">
                     @csrf

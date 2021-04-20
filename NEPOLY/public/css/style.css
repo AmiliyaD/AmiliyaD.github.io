@@ -82,13 +82,7 @@ a {
 
 /* INDEX H1 */
 
-/* .leftImage {
-    background: url('../img/левый\ задний\ серый\ пузырь.png') no-repeat;
-    background-size: 740px;
-    position: absolute;
-    top: 0;
-    left: 0;
-} */
+
 
 .allIndex {
     font-style: normal;
@@ -290,6 +284,19 @@ a {
     margin-top: 128px;
 }
 
+
+/* modal - window */
+.modalwindow {
+    background-color: blueviolet;
+    border: none;
+    color: white;
+    transform: translateX(120%);
+}
+.sendModal {
+    background-color: blueviolet;
+    border: none;
+    color: white 
+}
 @media (max-width: 750px) {
 
     .index__h1 h1,
