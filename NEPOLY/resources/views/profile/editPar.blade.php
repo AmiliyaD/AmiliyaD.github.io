@@ -15,7 +15,7 @@ Edit paragrah
 
 
         <div class="col-md-12 editPar_h1">
-            <h1 class="text-center">Редактирование главы</h1>
+            <h1 class="text-center" style="margin-top: 100px; font-weight: bold;">Редактирование главы</h1>
         </div>
 
 
@@ -67,7 +67,7 @@ Edit paragrah
             @csrf
             <input type="hidden" name="history" id="" value="{{$edit->history_id}}">
             <input type="hidden" name="his_id" id="" value="{{$edit->id}}">
-            <button class="allButtons showText__buttons par_button">Удалить главу</button>
+            <button class="allButtons showText__buttons par_button" style="margin-top: 30px;">Удалить главу</button>
 
         </form> --}}
     </div>
