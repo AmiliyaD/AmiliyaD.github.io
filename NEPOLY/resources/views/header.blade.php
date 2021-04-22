@@ -1,3 +1,4 @@
+<link rel="shortcut icon" href="{{ asset('img/logo.png') }}" type="image/png">
 <div class="col-xl-12 mt-3 index-container__header">
     <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container-fluid">

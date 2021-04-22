@@ -26,7 +26,7 @@ OneWork
     <div class="showParWork_header showText_Bg row">
         <div class="col-md-6 offset-md-3">
 
-            <h1 class="text-center">{{$historyPar->historyPar->title}}</h1>
+            <h1 class="text-center history_h1">{{$historyPar->historyPar->title}}</h1>
         </div>
         <div class="col-md-4 offset-md-4">
             <h2 class="text-center">{{$historyPar->history_title}}</h2>
@@ -125,6 +125,13 @@ OneWork
 @include('footer')
 
 <style>
+    .history_h1 {
+        font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 66px;
+    color: #000000;
+    }
     .showText_Bg {
         margin-top: 100px;
     }

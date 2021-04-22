@@ -8,6 +8,7 @@ use App\Models\HistoryText;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HistoryTextController;
 use App\Http\Controllers\homeController;
+use App\Http\Controllers\MailSendler;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\searchController;
 use App\Models\HistoryPar;
@@ -94,4 +95,8 @@ Route::post('deleteOnePar',[HistoryTextController::class, 'destroy'])->middlewar
 // АДМИН
 Route::post('deleteGenre', [AdminAccountController::class, 'destroy'])->middleware(['auth'])->name('deleteGenre');
 Route::post('addGenre', [AdminAccountController::class, 'store'])->middleware(['auth'])->name("addGenre");
+
+
+// MAIL
+Route::post('sendMail', [MailSendler::class, 'sendMail'])->name('sendMail');
 require __DIR__.'/auth.php';

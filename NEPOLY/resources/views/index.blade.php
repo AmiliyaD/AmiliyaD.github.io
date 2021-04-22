@@ -1,5 +1,6 @@
 @extends('styles')
 @section('link')
+
 <link rel="stylesheet" href="{{ asset('css/bg.css') }}">
 <link rel="stylesheet" href="{{ asset('css/tags.css') }}">
 <link rel="stylesheet" href="{{ asset('css/adminProfile.css') }}">
@@ -31,8 +32,8 @@ BookOfBooks
             </div> 
 
             {{-- ИСТОРИИ --}}
-
-            <div class="row index__history">
+      <div class="row index__history">
+                @include('session')
                 <div class="col-md-12">
                     <h3 class="index_history-title">Новинки</h3>
                 </div>
