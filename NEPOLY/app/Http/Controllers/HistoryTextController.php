@@ -8,6 +8,9 @@ use App\Models\HistoryText;
 use Illuminate\Http\Request;
 use App\Models\Genre;
 use App\Models\HistoryPar;
+use PDF;
+
+
 class HistoryTextController extends Controller
 {
     /**
@@ -71,7 +74,7 @@ class HistoryTextController extends Controller
     public function showWork($id)
     {
         return view('works.showWork', ['work'=>HistoryPar::find($id), 'comments'=>Comment::where('post_id', $id)->get()]);
-        # code...
+        
     }
     /**
      * Show the form for editing the specified resource.
@@ -104,7 +107,7 @@ class HistoryTextController extends Controller
         $history = HistoryText::where('id', $ed_id)->first();
 
         return view('profile.editPar', ['edit'=> $history]);
-        # code...
+       
     }
 
 
@@ -112,12 +115,9 @@ class HistoryTextController extends Controller
     
     public function update(Request $request, HistoryText $historyText)
     {
-        //
+    
         $edPar = HistoryText::find($request->history_id);
-        // $request->validate([
-        //     'title' => 'required',
-        //     'text' => 'required',
-        // ]);
+
         $edPar->history_title = $request->title;
         $edPar->history_text = $request->text;
    
@@ -133,6 +133,8 @@ class HistoryTextController extends Controller
      * @param  \App\Models\HistoryText  $historyText
      * @return \Illuminate\Http\Response
      */
+
+    //  УДАЛЯЕМ РАБОТУ
     public function destroy(HistoryText $historyText, Request $request)
     {
 
@@ -141,6 +143,22 @@ class HistoryTextController extends Controller
                  
         $request->session()->flash('info', 'Глава успешно удалена!');
         return redirect()->route('addPar', ['id'=> $request->history]);
-        //
+        
+    }
+
+
+    // СКАЧИВАЕМ ФАЙЛ В PDF
+    public function downloadPdf(Request $request)
+    {
+        $his = HistoryPar::where('id', $request->history_id)->get();
+        $historyText = HistoryText::where('history_id', $his[0]->id)->get();
+        $mass = [$his, $historyText];
+        $name = $his[0]->title;
+ 
+        view()->share('text', $his);
+        view()->share('text', $historyText);
+        $pdf = PDF::loadView('pdfView', ['historyPar'=> $his, 'historyTexts'=>$historyText]);
+        return $pdf->download("\'$name\'.pdf");
+       
     }
 }

@@ -65,6 +65,19 @@ if (isset($_GET['userIdButton'])) {
     </div>
 </div>
 
+
+
+<div class="row download mt-5">
+    <form class="col-md-6" method="POST" action="{{ route('downLoad')}}">
+        @csrf
+        <input type="hidden" name="history_id" value="{{$work->id}}">
+        <button class="btn btn-success">Скачать </button>
+    </form>
+</div>
+
+
+
+{{-- Комментарии --}}
 <div class="row history_commentInp">
     <div class="row">
         <div class="col-md-12">

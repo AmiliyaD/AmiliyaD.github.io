@@ -99,4 +99,9 @@ Route::post('addGenre', [AdminAccountController::class, 'store'])->middleware(['
 
 // MAIL
 Route::post('sendMail', [MailSendler::class, 'sendMail'])->name('sendMail');
+
+
+
+// DOWNLOAD
+Route::post('download-history', [HistoryTextController::class, 'downloadPdf'])->name('downLoad');
 require __DIR__.'/auth.php';

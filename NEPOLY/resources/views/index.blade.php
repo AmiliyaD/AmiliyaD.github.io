@@ -1,6 +1,9 @@
 @extends('styles')
 @section('link')
+<?php 
+use Faker\Factory as Faker;
 
+?>
 <link rel="stylesheet" href="{{ asset('css/bg.css') }}">
 <link rel="stylesheet" href="{{ asset('css/tags.css') }}">
 <link rel="stylesheet" href="{{ asset('css/adminProfile.css') }}">
@@ -10,7 +13,6 @@ BookOfBooks
 @endsection
 
 <body>
-
         <div class="leftImage"></div>
         <div class="rightImage"></div>
 
