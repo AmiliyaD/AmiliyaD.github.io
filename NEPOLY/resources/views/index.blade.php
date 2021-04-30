@@ -28,7 +28,7 @@ BookOfBooks
             <div class="row index__h1">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <h1>Подари сfffffffвой мир!</h1>
-                    <p>и может, он кому-то понравится</p>
+                    <p>и может, он кому-тоhh понравится</p>
                     <a href="{{ route('add') }}" class=""><button class='index__h1_button'>Добавить работу</button> </a>
                 </div>
             </div> 
