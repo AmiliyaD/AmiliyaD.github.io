@@ -28,6 +28,7 @@ BookOfBooks
             <div class="row index__h1">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                    ОБРАТИТЕ ВНИМАНИЕ!!!!!!!
+                   чето измененилось
                     <h1>Подари свой мир!</h1>
                     <p>и может, он кому-тоhhfddff понравится</p>
                     <a href="{{ route('add') }}" class=""><button class='index__h1_button'>Добавить работу</button> </a>
