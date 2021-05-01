@@ -22,3 +22,7 @@ button.onclick = async function() {
     resFetc = res
 }
 console.log(resFetc)
+
+let a = {
+    5: 10,
+}
