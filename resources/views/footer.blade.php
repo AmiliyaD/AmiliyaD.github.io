@@ -77,7 +77,7 @@
 <div class="bg_white_footer">
     <div class="container">
         <div class="row">
-            <div class="col-xl-6 offset-lg-3">
+            <div class="col-xl-6 col-md-12 col-sm-12  offset-lg-3">
                 <p class='text-center'>Администрация не несет ответственности за содержание работ</p>
                 <p class='text-center'>2021</p>
             </div>

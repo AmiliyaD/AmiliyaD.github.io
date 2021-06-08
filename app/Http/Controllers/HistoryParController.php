@@ -18,7 +18,7 @@ class HistoryParController extends Controller
      */
     public function index()
     {
-        return view('works.allWorks', ['history'=>HistoryPar::all()]);
+        return view('works.allWorks', ['history'=>HistoryPar::where('genre', null)->orderByDesc('createdTime')->get()]);
     }
 
     public function showSearch(Request $request)

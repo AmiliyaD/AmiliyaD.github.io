@@ -110,7 +110,7 @@ if (isset($_GET['userIdButton'])) {
          
             <input type="hidden" name="historyId" value="{{$work->id}}">
  
-            <div class="col-md-3 ">
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="commentInt__buttons">             
                     <button class='par-btn buttons_send'>Отправить</button>
                 </div>

@@ -17,12 +17,13 @@ class homeController extends Controller
     {
         //
         $id= HistoryPar::all()->get('id');
-        $his = HistoryPar::all()->take(4);
+        $hisSneak = HistoryPar::where('genre', null)->orderByDesc('createdTime')->take(4)->get();
+        // $his = HistoryPar::all()->orderBy('created')->take(4)->get();
         // $hi2s = HistoryPar::find(3)->comments()->get()->count();
         
         
         // return $hi2s;
-        return view('index',['histor'=>$his]);
+        return view('index',['histor'=>$hisSneak]);
     }
 
     /**

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class HistoryPar extends Model
 {
     use HasFactory;
+    // const CREATED_AT = 'created';
     public $timestamps = false;
     public function genresId() {
         return $this->hasOne(Genre::class, 'id', 'genre_id');

@@ -9,10 +9,12 @@ class MailSendler extends Controller
 {
     public function sendMail(Request $request)
     {
-        $l = 'ddd';
-        Mail::raw($request->send_text . $request->send_name, 
-        function ($message) {
-            $message->from('bookofbooks@bk.ru', 'John Doe');
+        $l =$request->send_name;
+        Mail::raw($request->send_text . "       
+        От: " . $request->send_name, 
+        function ($message, Request $request) {
+            global $l;
+            $message->from('bookofbooks@bk.ru', $request->send_name);
             $message->sender('bookofbooks@bk.ru', 'John Doe');
             $message->to('bookofbooks@bk.ru', 'John Doe')->subject('Письмо от пользователя');
       

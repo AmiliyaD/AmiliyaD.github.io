@@ -32,6 +32,13 @@
 
     {{-- autors --}}
     <div class="row autors  marginBottom mt-5" style="text-align: center;">
+        @if (isset($authors))
+
+
+@if (!count($authors))
+    <p>Никого с таким именем не найдено!</p>
+@endif
+@endif
         @foreach ($authors as $a)
         <div class="col-6 d-inline">
           <a href="{{ route('authorProfile', ['userId'=>$a->id]) }}">

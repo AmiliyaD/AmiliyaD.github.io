@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>{{$historyPar[0]->title}}</title>
 </head>
-
+{{$historyPar[0]->genresId->name}}
 <body>
     <div class="container">
         {{-- title --}}
@@ -46,6 +46,13 @@
                 @endforeach
             </div>
 
+        </div>
+        <div class="row">
+            <div class="end">
+                <div class="col-md-6 offset-md-3">
+                    <p>Конец!</p>
+                </div>
+            </div>
         </div>
     </div>
 </body>
